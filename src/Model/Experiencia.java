@@ -7,9 +7,8 @@ public class Experiencia {
     private int id_cadidato;
     private String cargo;
 
-    public Experiencia(){
-
-    }
+    public Experiencia() {}
+    
     public void setEmpresa(String Em){
         this.empresa = Em;
     }
