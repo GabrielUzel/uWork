@@ -1,26 +1,20 @@
-package Model;
+package model;
 
-public class PessoaFisica extends Empregador{
-    private String CPF;
+public class PessoaFisica extends Empregador {
+    // Atributos
+    private String cpf;
     private String categoriaServico;
-    public PessoaFisica(){
+
+    // Construtor
+    public PessoaFisica() {
         super();
     }
-    public void setCPF(String CPF){
-        this.CPF=CPF;
-    }
 
-    public void setCategoriaServico(String cat){
-        this.categoriaServico=cat;
-    }
+    // Setters
+    public void setCPF(String cpf) { this.cpf = cpf; }
+    public void setCategoriaServico(String categoriaServico) { this.categoriaServico = categoriaServico; }
 
-    public String getCPF(){
-        return this.CPF;
-    }
-
-    public String getCategoriaServico(){
-        return this.categoriaServico;
-    }
-
-
+    // Getters
+    public String getCPF() { return this.cpf; }
+    public String getCategoriaServico() { return this.categoriaServico; }
 }

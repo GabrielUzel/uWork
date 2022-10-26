@@ -1,42 +1,24 @@
-package Model;
+package model;
 
 public class Formacao {
+    // Atributos
     private String instituicao;
     private int tempoDuracao;
     private String curso;
     private int id_candidato;
-    public Formacao(){
 
-    }
-    public void setInstituição(String ins){
-        this.instituicao=ins;
-    }
+    // Construtor
+    public Formacao() {}
 
-    public void setTempoDuracao(int ins){
-        this.tempoDuracao=ins;
-    }
+    // Setters
+    public void setInstituição(String instituicao) { this.instituicao = instituicao; }
+    public void setTempoDuracao(int tempoDuracao) { this.tempoDuracao = tempoDuracao; }
+    public void setCurso(String curso) { this.curso = curso; }
+    public void setIdCanditado(int id_candidato) { this.id_candidato = id_candidato; }
 
-    public void setCurso(String ins){
-        this.curso=ins;
-    }
-
-    public void setIdCanditado(int ins){
-        this.id_candidato=ins;
-    }
-
-    public String getInstituição(){
-        return this.instituicao;
-    }
-
-    public int getTempoDuracao(){
-        return this.tempoDuracao;
-    }
-
-    public String getCurso(){
-        return this.curso;
-    }
-
-    public int getIdCanditado(){
-        return this.id_candidato;
-    }
+    // Getters
+    public String getInstituição() { return this.instituicao; }
+    public int getTempoDuracao() { return this.tempoDuracao; }
+    public String getCurso() { return this.curso; }
+    public int getIdCanditado() { return this.id_candidato; }
 }

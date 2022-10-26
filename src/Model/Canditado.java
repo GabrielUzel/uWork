@@ -1,8 +1,9 @@
-package Model;
+package model;
 
 import java.util.Date;
 
 public class Canditado {
+    // Atributos
     private int id_candidato;
     private String nome;
     private String sobrenome;
@@ -13,8 +14,10 @@ public class Canditado {
     private Date dataNascimeto;
     private String CPF;
 
+    // Construtor
     public Canditado() {}
 
+    // Setters
     public void setIdCanditado(int id_candidato) { this.id_candidato = id_candidato; }
     public void setNome(String nome) { this.nome = nome; }
     public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
@@ -23,6 +26,7 @@ public class Canditado {
     public void setDataNascimento(Date dataNascimento) { this.dataNascimeto = dataNascimento; }
     public void setCPF(String CPF) { this.CPF = CPF; }
 
+    // Getters
     public int getIdCanditado() { return this.id_candidato; }
     public String getNome() { return this.nome; }
     public String getSobrenome() { return this.sobrenome; }

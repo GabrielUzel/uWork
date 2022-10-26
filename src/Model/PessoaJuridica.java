@@ -1,24 +1,20 @@
-package Model;
+package model;
 
-public class PessoaJuridica extends Empregador{
-    private String CNPJ;
+public class PessoaJuridica extends Empregador {
+    // Atributos
+    private String cnpj;
     private String razaoSocial;
+
+    // Construtor
     public PessoaJuridica(){
         super();
     }
-    public void setCPF(String CNPJ){
-        this.CNPJ=CNPJ;
-    }
 
-    public void setRazaoSocial(String cat){
-        this.razaoSocial=cat;
-    }
+    // Setters
+    public void setCNPJ(String cnpj) { this.cnpj = cnpj; }
+    public void setRazaoSocial(String razaoSocial) { this.razaoSocial = razaoSocial; }
 
-    public String getCNPJ(){
-        return this.CNPJ;
-    }
-
-    public String getRazaoSocial(){
-        return this.razaoSocial;
-    }
+    // Getters
+    public String getCNPJ() { return this.cnpj; }
+    public String getRazaoSocial() { return this.razaoSocial; }
 }

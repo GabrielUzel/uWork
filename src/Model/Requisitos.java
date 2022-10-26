@@ -1,48 +1,24 @@
-package Model;
+package model;
 
 public class Requisitos {
-    private String nome_requisito;
+    // Atributos
+    private String nomeRequisito;
     private String areaAtuacao;
     private String descricao;
     private int id_vaga;
 
-    public Requisitos(){
-
-    }
+    // Construtor
+    public Requisitos() {}
     
-    public void setNomeRequisito(String nome){
-        this.nome_requisito = nome;
+    // Setters
+    public void setNomeRequisito(String nomeRequisito) { this.nomeRequisito = nomeRequisito; }
+    public void setAreaAtuacao(String areaAtuacao) { this.areaAtuacao = areaAtuacao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public void setIdVaga(int id_vaga){ this.id_vaga = id_vaga; }
 
-    }
-    public void setAreaAtuacao(String nome){
-        this.areaAtuacao = nome;
-
-    }
-    public void setDescricao(String nome){
-        this.descricao = nome;
-
-    }
-    public void setIdVaga(int nome){
-        this.id_vaga = nome;
-
-    }
-
-    public String getNomeRequisito(){
-        return this.nome_requisito;
-
-    }
-
-    public String getAreaAtuacao(){
-        return this.areaAtuacao;
-
-    }
-    public String getDescricao(){
-        return this.descricao;
-
-    }
-
-    public int getIdVaga(){
-        return this.id_vaga;
-
-    }
+    // Getters
+    public String getNomeRequisito() { return this.nomeRequisito; }
+    public String getAreaAtuacao() { return this.areaAtuacao; }
+    public String getDescricao() { return this.descricao; }
+    public int getIdVaga() { return this.id_vaga; }
 }
