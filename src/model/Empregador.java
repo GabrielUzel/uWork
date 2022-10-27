@@ -2,9 +2,9 @@ package model;
 
 import java.util.Date;
 
-class Empregador {
+public class Empregador {
     // Atributos
-    private int id_candidato;
+    private int id_empregador;
     private String nome;
     private String sobrenome;
     private String email;
@@ -15,14 +15,14 @@ class Empregador {
     public Empregador(){}
 
     // Setters
-    public void setIdCanditado(int id_candidato) { this.id_candidato = id_candidato; }
+    public void setIdEmpregador(int id_empregador) { this.id_empregador = id_empregador; }
     public void setNome(String nome) { this.nome = nome; }
     public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
     public void setEmail(String email) { this.email = email; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
 
     // Getters
-    public int getIdCanditado() { return this.id_candidato; }
+    public int getIdEmpregador() { return this.id_empregador; }
     public String getNome() { return this.nome; }
     public String getSobrenome() { return this.sobrenome; }
     public String getEmail() { return this.email; }

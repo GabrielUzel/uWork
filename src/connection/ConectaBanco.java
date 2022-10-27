@@ -8,11 +8,11 @@ public class ConectaBanco {
     public ConectaBanco() {}
 
     public Connection conectar() throws  SQLException, ClassNotFoundException {
-        Connection conn = null;
+        Connection conexao = null;
         Class.forName("com.mysql.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "root");
+        conexao = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "root");
 
-        return conn;
+        return conexao;
     }
 
     public void desconectar(Connection conn) throws  SQLException {
