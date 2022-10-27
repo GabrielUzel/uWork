@@ -23,7 +23,7 @@ public class ControllerCanditado {
         return candidatosList;
     }
 
-    public Canditado pesquisarCanditadoPorId(int id) throws ClassNotFoundException, SQLException {
+    public Canditado pesquisarCanditado(int id) throws ClassNotFoundException, SQLException {
         Canditado candidato = candidatoDao.pesquisarCandidato(id);
         return candidato;
     }

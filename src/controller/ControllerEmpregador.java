@@ -22,7 +22,7 @@ public class ControllerEmpregador {
         return empregadoresList;
     }
 
-    public Empregador pesquisarEmpregadorPorId(int id) throws ClassNotFoundException, SQLException {
+    public Empregador pesquisarEmpregador(int id) throws ClassNotFoundException, SQLException {
         Empregador empregador = empregadorDao.pesquisarEmpregador(id);
         return empregador;
     }
