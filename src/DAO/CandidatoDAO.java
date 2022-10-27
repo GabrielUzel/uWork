@@ -28,6 +28,7 @@ public class CandidatoDAO {
         pst.setString(5, candidato.getTelefone());
         pst.setDate(6, (Date) candidato.getDataNascimento());
 
+        pst.close();
         conexao.close();
     }
 
@@ -97,6 +98,7 @@ public class CandidatoDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
+        pst.executeQuery();
         pst.setInt(0, candidato.getIdCanditado());
         pst.setString(1, candidato.getNome());
         pst.setString(2, candidato.getCPF());
@@ -104,6 +106,9 @@ public class CandidatoDAO {
         pst.setString(4, candidato.getEmail());
         pst.setString(5, candidato.getTelefone());
         pst.setDate(6, (Date) candidato.getDataNascimento());
+
+        pst.close();
+        conexao.close();
     }
 
     public void deletarCandidato(Canditado candidato) throws SQLException, ClassNotFoundException {

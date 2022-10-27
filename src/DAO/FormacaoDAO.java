@@ -4,99 +4,110 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Conexao.ConectaBanco;
+import connection.ConectaBanco;
 import java.util.ArrayList;
 import java.util.List;
-import Model.Formacao;
+import model.Formacao;
 
 public class FormacaoDAO {
-    public FormacaoDAO(){}
-    public void criarFormacao(Formacao can)throws SQLException, ClassNotFoundException{
-        
-        String sql="insert into formacao () values(?,?,?)";
+    public FormacaoDAO() {}
+
+    public void criarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
+        String sql = "insert into formacao () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, can.getIdCanditado());
-        pst.setString(1, can.getCurso());
-        pst.setString(3, can.getInstituição());
-        pst.setInt(4, can.getTempoDuracao());
+        pst.setInt(0, formacao.getIdCanditado());
+        pst.setString(1, formacao.getCurso());
+        pst.setString(3, formacao.getInstituição());
+        pst.setInt(4, formacao.getTempoDuracao());
+
         pst.close();
         conexao.close();
-        
     }
-    public Formacao listarFormacao(int id) throws SQLException, ClassNotFoundException{
-        String sql="select * from formacao where id=?";
+
+    public Formacao pesquisarFormacao(int id) throws SQLException, ClassNotFoundException {
+        String sql = "select * from formacao where id=?";
         PreparedStatement pst;
         ResultSet rs;
         Formacao formacao = null;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
-        if(rs != null){
-            formacao  = new Formacao();
-            formacao.setIdCanditado(rs.getInt(id));
+
+        if(rs != null) {
+            formacao = new Formacao();
+            formacao.setIdCandidato(rs.getInt(id));
             formacao.setInstituição(rs.getString("instituicao"));
             formacao.setCurso(rs.getString("curso"));
             formacao.setTempoDuracao(rs.getInt("tempoDeDuracao"));
-            
         }
+
         rs.close();
         pst.close();
         conexao.close();
+
         return formacao;
     }
 
-    public List <Formacao> listarTodasFormacoes()throws SQLException, ClassNotFoundException{
-        String sql="select * from formacao";
+    public List<Formacao> listarTodasFormacoes() throws SQLException, ClassNotFoundException {
+        String sql = "select * from formacao";
         PreparedStatement pst;
-        List <Formacao> formacoes = null;
+        List<Formacao> formacoesList = null;
         ResultSet rs;
         Formacao formacao = null;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
-        if(rs != null){
-            formacoes = new ArrayList<Formacao>();
-            while(rs.next()){
-                formacao  = new Formacao();
-                formacao.setIdCanditado(rs.getInt("id"));
+
+        if(rs != null) {
+            formacoesList = new ArrayList<Formacao>();
+
+            while(rs.next()) {
+                formacao = new Formacao();
+                formacao.setIdCandidato(rs.getInt("id"));
                 formacao.setInstituição(rs.getString("instituicao"));
                 formacao.setCurso(rs.getString("curso"));
                 formacao.setTempoDuracao(rs.getInt("tempoDeDuracao"));
-                formacoes.add(formacao);
+                formacoesList.add(formacao);
             }
-            
         }
+
         rs.close();
         pst.close();
         conexao.close();
-        return formacoes;
+
+        return formacoesList;
     }
-    public void atualizarExperiencia(Formacao can)throws SQLException, ClassNotFoundException{
-        String sql="update  formacao set () values(?,?,?)";
+
+    public void atualizarExperiencia(Formacao formacao) throws SQLException, ClassNotFoundException {
+        String sql = "update  formacao set () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(0, can.getIdCanditado());
-        pst.setString(1, can.getCurso());
-        pst.setString(3, can.getInstituição());
-        pst.setInt(4, can.getTempoDuracao());
+        pst.setInt(0, formacao.getIdCanditado());
+        pst.setString(1, formacao.getCurso());
+        pst.setString(3, formacao.getInstituição());
+        pst.setInt(4, formacao.getTempoDuracao());
+
         pst.close();
         conexao.close();
-        
-        
     }
-    public void deletarExperiencia(Formacao can)throws SQLException, ClassNotFoundException{
-        String sql="delete from formacao where id=?";
+
+    public void deletarExperiencia(Formacao formacao) throws SQLException, ClassNotFoundException {
+        String sql = "delete from formacao where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, can.getIdCanditado());
+        pst.setInt(0, formacao.getIdCanditado());
         pst.execute();
         pst.close();
         conexao.close();
     }
-    
 }

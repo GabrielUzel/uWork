@@ -38,7 +38,7 @@ public class EmpregadorDAO {
         rs = pst.executeQuery();
 
         if(rs != null) {
-            empregador  = new Empregador();
+            empregador = new Empregador();
             empregador.setIdEmpregador(rs.getInt(id));
             empregador.setNome(rs.getString("nome"));
             empregador.setSobrenome(rs.getString("sobrenome"));
@@ -53,7 +53,7 @@ public class EmpregadorDAO {
         return empregador;
     }
 
-    public List <Empregador> listarTodosEmpregadores() throws SQLException, ClassNotFoundException {
+    public List<Empregador> listarTodosEmpregadores() throws SQLException, ClassNotFoundException {
         String sql = "select * from empregadordidato";
         PreparedStatement pst;
         List <Empregador> empregadoresList = null;
@@ -91,11 +91,15 @@ public class EmpregadorDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
+        pst.executeQuery();
         pst.setInt(0, empregador.getIdEmpregador());
         pst.setString(1, empregador.getNome());
         pst.setString(3, empregador.getSobrenome());
         pst.setString(4, empregador.getEmail());
         pst.setString(5, empregador.getTelefone());
+
+        pst.close();
+        conexao.close();
     }
 
     public void deletarEmpregador(Empregador empregador) throws SQLException, ClassNotFoundException {

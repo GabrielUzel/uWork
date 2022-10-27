@@ -39,7 +39,7 @@ public class ExperienciaDAO {
         rs = pst.executeQuery();
 
         if(rs != null) {
-            experiencia  = new Experiencia();
+            experiencia = new Experiencia();
             experiencia.setIdCanditado(rs.getInt(id));
             experiencia.setCargo(rs.getString("cargo"));
             experiencia.setAreaDeAtuacao(rs.getString("areaDeAtuacao"));
@@ -54,7 +54,7 @@ public class ExperienciaDAO {
         return experiencia;
     }
 
-    public List <Experiencia> listarTodasExperiencias() throws SQLException, ClassNotFoundException {
+    public List<Experiencia> listarTodasExperiencias() throws SQLException, ClassNotFoundException {
         String sql = "select * from experiencia";
         PreparedStatement pst;
         List <Experiencia> experienciasList = null;

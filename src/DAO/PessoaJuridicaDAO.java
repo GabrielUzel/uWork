@@ -1,92 +1,105 @@
 package DAO;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import Conexao.ConectaBanco;
+import connection.ConectaBanco;
 import java.util.ArrayList;
 import java.util.List;
-import Model.PessoaJuridica;
+import model.PessoaJuridica;
+
 public class PessoaJuridicaDAO {
     public PessoaJuridicaDAO(){}
-    public void criarPessoaFisica(PessoaJuridica can)throws SQLException, ClassNotFoundException{
-        
-        String sql="insert into pessoajuridica () values(?,?,?)";
+
+    public void criarPessoaFisica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+        String sql = "insert into pessoajuridica () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
-        pst.setString(1, can.getCNPJ());
-        pst.setString(2, can.getRazaoSocial());
+        pst.setString(1, pessoaJuridica.getCNPJ());
+        pst.setString(2, pessoaJuridica.getRazaoSocial());
+
         pst.close();
         conexao.close();
-        
     }
-    public PessoaJuridica listarPessoaJuridica(int id) throws SQLException, ClassNotFoundException{
-        String sql="select * from pessoajuridica where id=?";
+
+    public PessoaJuridica pesquisarPessoaJuridica(int id) throws SQLException, ClassNotFoundException {
+        String sql = "select * from pessoajuridica where id=?";
         PreparedStatement pst;
         ResultSet rs;
         PessoaJuridica pessoaJuridica = null;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
-        if(rs != null){
-            pessoaJuridica  = new PessoaJuridica();
+
+        if(rs != null) {
+            pessoaJuridica = new PessoaJuridica();
             pessoaJuridica.setCNPJ(rs.getString("CNPJ"));
             pessoaJuridica.setRazaoSocial(rs.getString("CategoriaServico"));
-            
         }
+
         rs.close();
         pst.close();
         conexao.close();
-        return pessoaJuridica ;
+
+        return pessoaJuridica;
     }
 
-    public List <PessoaJuridica> listarTodasPessoasFisicas()throws SQLException, ClassNotFoundException{
-        String sql="select * from pessoaJuridica";
+    public List<PessoaJuridica> listarTodasPessoasJuridicas() throws SQLException, ClassNotFoundException {
+        String sql = "select * from pessoaJuridica";
         PreparedStatement pst;
-        List <PessoaJuridica> pessoasJuridicas  = null;
+        List <PessoaJuridica> pessoasJuridicasList = null;
         ResultSet rs;
-        PessoaJuridica  pessoaJuridica  = null;
+        PessoaJuridica pessoaJuridica = null;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
-        if(rs != null){
-            pessoasJuridicas  = new ArrayList<PessoaJuridica>();
-            while(rs.next()){
-                pessoaJuridica  = new PessoaJuridica();
+
+        if(rs != null) {
+            pessoasJuridicasList = new ArrayList<PessoaJuridica>();
+
+            while(rs.next()) {
+                pessoaJuridica = new PessoaJuridica();
                 pessoaJuridica.setCNPJ(rs.getString("CNPJ"));
                 pessoaJuridica.setRazaoSocial(rs.getString("RazaoSocial"));
-                pessoasJuridicas .add(pessoaJuridica);
+                pessoasJuridicasList.add(pessoaJuridica);
             }
-            
         }
+
         rs.close();
         pst.close();
         conexao.close();
-        return pessoasJuridicas;
+
+        return pessoasJuridicasList;
     }
-    public void atualizarPessoaFisica(PessoaJuridica can)throws SQLException, ClassNotFoundException{
-        String sql="update  pessoajuridica set () values(?,?,?)";
+
+    public void atualizarPessoaFisica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+        String sql = "update  pessoajuridica set () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setString(1, can.getCNPJ());
-        pst.setString(2, can.getRazaoSocial());
+        pst.setString(1, pessoaJuridica.getCNPJ());
+        pst.setString(2, pessoaJuridica.getRazaoSocial());
+
         pst.close();
         conexao.close();
-        
-        
     }
-    public void deletarExperiencia(PessoaJuridica can)throws SQLException, ClassNotFoundException{
-        String sql="delete from pessoafisica where id=?";
+
+    public void deletarExperiencia(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+        String sql = "delete from pessoafisica where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
+
         pst = conexao.prepareStatement(sql);
-        pst.setString(0, can.getCNPJ());
+        pst.setString(0, pessoaJuridica.getCNPJ());
         pst.execute();
         pst.close();
         conexao.close();
     }
-    
 }

@@ -14,7 +14,7 @@ public class Formacao {
     public void setInstituição(String instituicao) { this.instituicao = instituicao; }
     public void setTempoDuracao(int tempoDuracao) { this.tempoDuracao = tempoDuracao; }
     public void setCurso(String curso) { this.curso = curso; }
-    public void setIdCanditado(int id_candidato) { this.id_candidato = id_candidato; }
+    public void setIdCandidato(int id_candidato) { this.id_candidato = id_candidato; }
 
     // Getters
     public String getInstituição() { return this.instituicao; }
