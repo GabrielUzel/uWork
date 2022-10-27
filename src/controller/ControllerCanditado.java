@@ -1,42 +1,40 @@
-package controller;
-
+package Controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import DAO.CandidatoDAO;
-import model.Canditado;
-
+import Model.Canditado;
 public class ControllerCanditado {
     private CandidatoDAO candidatoDao = new CandidatoDAO();
+    public ControllerCanditado(){}
+    public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
+        Canditado c = new Canditado();
+        c.setCPF(sobrenome);
+        c.setNome(nome);
+        c.setSobrenome(sobrenome);
+        candidatoDao.criarCanditado(c);
+    }
+    public ArrayList<Canditado> listarTodosCanditados() throws ClassNotFoundException, SQLException{
+        ArrayList<Canditado> candidatos = (ArrayList<Canditado>) candidatoDao.listarTodosCandidatos();
+        return candidatos;
+        
+    }
+    public Canditado pesquisarCanditadoPorId(int id) throws ClassNotFoundException, SQLException{
+        Canditado c = candidatoDao.pesquisarCandidato(id);
+        return c;
 
-    public ControllerCanditado() {}
+    }
+    public void atualizarCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
+        Canditado c = new Canditado();
+        c.setCPF(sobrenome);
+        c.setNome(nome);
+        c.setSobrenome(sobrenome);
+        candidatoDao.atualizarCandidato(c);
+    }
+    public void deletarCandidato(Canditado c) throws ClassNotFoundException, SQLException{
+        candidatoDao.deletarCandidato(c);
 
-    public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException {
-        Canditado candidato = new Canditado();
-        candidato.setCPF(sobrenome);
-        candidato.setNome(nome);
-        candidato.setSobrenome(sobrenome);
-        candidatoDao.criarCanditado(candidato);
     }
 
-    public ArrayList<Canditado> listarTodosCanditados() throws ClassNotFoundException, SQLException {
-        ArrayList<Canditado> candidatosList = (ArrayList<Canditado>) candidatoDao.listarTodosCandidatos();
-        return candidatosList;
-    }
 
-    public Canditado pesquisarCanditado(int id) throws ClassNotFoundException, SQLException {
-        Canditado candidato = candidatoDao.pesquisarCandidato(id);
-        return candidato;
-    }
-
-    public void atualizarCandidato(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
-        Canditado canditado = new Canditado();
-        canditado.setCPF(sobrenome);
-        canditado.setNome(nome);
-        canditado.setSobrenome(sobrenome);
-        candidatoDao.atualizarCandidato(canditado);
-    }
-
-    public void deletarCandidato(Canditado canditado) throws ClassNotFoundException, SQLException {
-        candidatoDao.deletarCandidato(canditado);
-    }
+    
 }

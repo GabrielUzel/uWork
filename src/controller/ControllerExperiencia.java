@@ -1,40 +1,36 @@
-package controller;
-
+package Controller;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import DAO.ExperienciaDAO;
-import model.Experiencia;
-
+import DAO.ExeperienciaDAO;
+import Model.Experiencia;
 public class ControllerExperiencia {
-    public ControllerExperiencia() {}
+    public ControllerExperiencia(){}
+    private ExeperienciaDAO EmDAO = new ExeperienciaDAO();
+    public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
+        Experiencia c = new Experiencia();
+        c.setCargo(nome);
+        c.setEmpresa(sobrenome);
+        EmDAO.criarExperiencia(c);
+    }
+    public ArrayList<Experiencia> listarTodosCanditados() throws ClassNotFoundException, SQLException{
+        ArrayList<Experiencia> candidatos = (ArrayList<Experiencia>) EmDAO.listarTodasExperiencias();
+        return candidatos;
+        
+    }
+    public Experiencia pesquisarEmpregadorPorId(int id) throws ClassNotFoundException, SQLException{
+        Experiencia c = EmDAO.listarExperiencia(id);
+        return c;
 
-    private ExperienciaDAO experienciaDao = new ExperienciaDAO();
+    }
+    public void atualizarCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
+        Experiencia c = new Experiencia();
+        c.setCargo(nome);
+        c.setEmpresa(sobrenome);
+        EmDAO.atualizarExperiencia(c);
+    }
+    public void deletarCandidato(Experiencia c) throws ClassNotFoundException, SQLException{
+        EmDAO.deletarExperiencia(c);
 
-    public void cadastraExperiencia(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
-        Experiencia experiencia = new Experiencia();
-        experiencia.setCargo(nome);
-        experiencia.setEmpresa(sobrenome);
-        experienciaDao.criarExperiencia(experiencia);
     }
 
-    public ArrayList<Experiencia> listarTodasExperiencias() throws ClassNotFoundException, SQLException {
-        ArrayList<Experiencia> experienciasList = (ArrayList<Experiencia>) experienciaDao.listarTodasExperiencias();
-        return experienciasList;
-    }
-
-    public Experiencia pesquisarexperiencia(int id) throws ClassNotFoundException, SQLException {
-        Experiencia experiencia = experienciaDao.pesquisarExperiencia(id);
-        return experiencia;
-    }
-
-    public void atualizarExperiencia(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
-        Experiencia experiencia = new Experiencia();
-        experiencia.setCargo(nome);
-        experiencia.setEmpresa(sobrenome);
-        experienciaDao.atualizarExperiencia(experiencia);
-    }
-
-    public void deletarExperiencia(Experiencia experiencia) throws ClassNotFoundException, SQLException{
-        experienciaDao.deletarExperiencia(experiencia);
-    }
 }
