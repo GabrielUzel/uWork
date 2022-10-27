@@ -1,0 +1,101 @@
+# FUNCIONALIDADES BASICAS DO SISTEMA
+
+# CRIAR CONTA NA PLATAFORMA
+  - PREENCHER DADOS BASICOS
+  - ESCOLHER TIPO DA CONTA (define PERMISSOES E VISOES):
+    - EMPREGADOR
+      - PJ -> EMPRESA
+      - PF -> 
+    - CANDIDATO
+
+# ENTRAR NA PLATAFORMA
+    - lOGIN
+      - Email ou CPF/CNPJ
+      - Senha
+
+# ENTIDADES BÁSICAS
+    - EMPREGADOR
+      - PJ
+      - PF
+    - CANDIDATO
+    - VAGA
+    - CANDIDATURA *
+    - FORMACAO
+    - EXPERIENCIA
+    - REQUISITOS
+  
+## OBSERVAÇÕES:
+    - EMPREGADOR pode oferecer N vagas
+    - CANDIDATO pode se candidatar a N vagas
+    - CANDIDATO pode ter mais de uma formação
+    - CANDIDATO pode ter mais de uma experiencia profissional
+    - VAGA possui N requisitos
+    - 
+
+
+# ATRIBUTOS
+
+  ## USUARIO
+    - EMAIL (pK)
+    - SENHA
+    ## EMPREGADOR
+      - ID (pK)
+      - NOME
+      - ENDERECO
+      - TELEFONE
+      - EMAIL
+      - VAGA (fK)
+    ### PF
+      - CPF (pK)
+    ### PJ
+      - CNPJ (pK)
+      - RAZAO SOCIAL
+
+    ## CANDIDATO
+      - ID (pK)
+      - NOME
+      - CPF
+      - ENDERECO
+      - TELEFONE
+      - FORMACAO (fk)
+      - EXPERIENCIA (fK)
+      - AREA_INTERESSE (fK)
+      - CANDIDATURA_VAGA (fK)
+
+  ## VAGA
+    - ID (pK)
+    - NOME
+    - AREA_ATUACAO
+    - REGIME
+    - DESCRICAO
+    - SALARIO
+    - DATA_CRIACAO
+    _ DATA_LIMITE_CANDIADTURA
+    - STATUS
+    - REQUISITOS (fK)
+    - EMPREGADOR_OFERTANTE (fK)
+
+  ## CANDIDATURA
+    - ID_VAGA (pK, fK)
+    - ID_CANDIDATO (pK,fK)
+    - STATUS
+
+  ## REQUISITO
+    - ID (pK)
+    - NOME
+    - DESCRICAO
+
+  ## FORMACAO
+    - ID (pK)
+    - CURSO
+    - INSTITUICAO
+
+  ## EXPERIENCIA
+    - ID (pK)
+    - CARGO
+    - DATA_INICIO
+    - DATA_FIM
+    - DESCRICAO
+    - EMPRESA
+
+
