@@ -1,36 +1,40 @@
-package Controller;
+package controller;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import DAO.EmpregadorDAO;
-import Model.Empregador;
+import model.Empregador;
+
 public class ControllerEmpregador {
-    public ControllerEmpregador(){}
-    private EmpregadorDAO EmDAO = new EmpregadorDAO();
-    public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
-        Empregador c = new Empregador();
-        c.setNome(nome);
-        c.setSobrenome(sobrenome);
-        EmDAO.criarEmpregador(c);
-    }
-    public ArrayList<Empregador> listarTodosCanditados() throws ClassNotFoundException, SQLException{
-        ArrayList<Empregador> candidatos = (ArrayList<Empregador>) EmDAO.listarTodosCandidatos();
-        return candidatos;
-        
-    }
-    public Empregador pesquisarEmpregadorPorId(int id) throws ClassNotFoundException, SQLException{
-        Empregador c = EmDAO.listarEmpregador(id);
-        return c;
+    public ControllerEmpregador() {}
 
-    }
-    public void atualizarCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException{
-        Empregador c = new Empregador();
-        c.setNome(nome);
-        c.setSobrenome(sobrenome);
-        EmDAO.atualizarEmpregador(c);
-    }
-    public void deletarCandidato(Empregador c) throws ClassNotFoundException, SQLException{
-        EmDAO.deletarEmpregador(c);
+    private EmpregadorDAO empregadorDao = new EmpregadorDAO();
 
+    public void cadastraEmpregador(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
+        Empregador empregador = new Empregador();
+        empregador.setNome(nome);
+        empregador.setSobrenome(sobrenome);
+        empregadorDao.criarEmpregador(empregador);
     }
 
+    public ArrayList<Empregador> listarTodosEmpregadores() throws ClassNotFoundException, SQLException {
+        ArrayList<Empregador> empregadoresList = (ArrayList<Empregador>) empregadorDao.listarTodosEmpregadores();
+        return empregadoresList;
+    }
+
+    public Empregador pesquisarEmpregador(int id) throws ClassNotFoundException, SQLException {
+        Empregador empregador = empregadorDao.pesquisarEmpregador(id);
+        return empregador;
+    }
+
+    public void atualizarEmpregador(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
+        Empregador empregador = new Empregador();
+        empregador.setNome(nome);
+        empregador.setSobrenome(sobrenome);
+        empregadorDao.atualizarEmpregador(empregador);
+    }
+
+    public void deletarCandidato(Empregador empregador) throws ClassNotFoundException, SQLException {
+        empregadorDao.deletarEmpregador(empregador);
+    }
 }
