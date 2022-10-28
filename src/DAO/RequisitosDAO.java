@@ -26,7 +26,7 @@ public class RequisitosDAO {
         conexao.close();
     }
 
-    public Requisitos pesquisarRequisito(int id) throws SQLException, ClassNotFoundException {
+    public Requisitos pesquisarRequisitos(int id) throws SQLException, ClassNotFoundException {
         String sql = "select * from formacao where id=?";
         PreparedStatement pst;
         ResultSet rs;

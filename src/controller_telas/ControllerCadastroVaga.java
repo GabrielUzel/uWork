@@ -1,11 +1,11 @@
 package controller_telas;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class ControllerCadastroVaga {
-
     @FXML
     private Button btn_requisitos;
 
@@ -29,5 +29,4 @@ public class ControllerCadastroVaga {
 
     @FXML
     private TextField txt_salario;
-
 }

@@ -1,10 +1,10 @@
 package controller_telas;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class ControllerLogin{
-
     @FXML
     private Button btn_entrar;
 
@@ -19,5 +19,4 @@ public class ControllerLogin{
 
     @FXML
     private TextField txt_senha;
-
 }

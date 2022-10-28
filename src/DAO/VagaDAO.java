@@ -105,7 +105,7 @@ public class VagaDAO {
         conexao.close();
     }
 
-    public void deletarvaga(Vaga vaga) throws SQLException, ClassNotFoundException {
+    public void deletarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
         String sql = "delete from vaga where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
