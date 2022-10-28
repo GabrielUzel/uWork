@@ -1,4 +1,4 @@
-package ControllerTelas;
+package controller_telas;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
