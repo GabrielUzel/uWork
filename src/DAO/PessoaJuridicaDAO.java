@@ -12,7 +12,7 @@ import model.PessoaJuridica;
 public class PessoaJuridicaDAO {
     public PessoaJuridicaDAO(){}
 
-    public void criarPessoaFisica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+    public void criarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
         String sql = "insert into pessoajuridica () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
@@ -77,7 +77,7 @@ public class PessoaJuridicaDAO {
         return pessoasJuridicasList;
     }
 
-    public void atualizarPessoaFisica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+    public void atualizarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
         String sql = "update  pessoajuridica set () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
@@ -91,7 +91,7 @@ public class PessoaJuridicaDAO {
         conexao.close();
     }
 
-    public void deletarExperiencia(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
+    public void deletarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
         String sql = "delete from pessoafisica where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
