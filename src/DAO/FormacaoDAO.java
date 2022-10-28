@@ -83,7 +83,7 @@ public class FormacaoDAO {
         return formacoesList;
     }
 
-    public void atualizarExperiencia(Formacao formacao) throws SQLException, ClassNotFoundException {
+    public void atualizarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
         String sql = "update  formacao set () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
@@ -99,7 +99,7 @@ public class FormacaoDAO {
         conexao.close();
     }
 
-    public void deletarExperiencia(Formacao formacao) throws SQLException, ClassNotFoundException {
+    public void deletarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
         String sql = "delete from formacao where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
