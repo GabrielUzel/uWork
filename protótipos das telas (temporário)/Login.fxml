@@ -21,12 +21,12 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="37.0" layoutY="184.0" prefHeight="17.0" prefWidth="41.0" text="Email:">
+            <Label alignment="CENTER_RIGHT" layoutX="16.0" layoutY="184.0" prefHeight="20.0" prefWidth="62.0" text="Email:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="37.0" layoutY="261.0" prefHeight="17.0" prefWidth="41.0" text="Senha:">
+            <Label alignment="CENTER_RIGHT" layoutX="16.0" layoutY="261.0" prefHeight="20.0" prefWidth="62.0" text="Senha:">
                <font>
                   <Font size="14.0" />
                </font>

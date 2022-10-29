@@ -56,10 +56,10 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="47.0" layoutY="243.0">
                <image>
-                  <Image url="@imagens/adicionar.png" />
+                  <Image url="@imagens/remover.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="36.0" layoutY="329.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Adicionar vaga" textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="36.0" layoutY="329.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Remover vaga" textAlignment="CENTER" />
             <Label alignment="CENTER" layoutX="186.0" layoutY="230.0" prefHeight="116.0" prefWidth="113.0" style="-fx-background-color: #2A6F97; -fx-text-fill: white; -fx-background-radius: 15;">
                <font>
                   <Font size="18.0" />
