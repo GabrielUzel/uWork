@@ -97,7 +97,7 @@ public class PessoaFisicaDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setString(0, pessoaFisica.getCPF());
+        pst.setString(1, pessoaFisica.getCPF());
         pst.execute();
         pst.close();
         conexao.close();
