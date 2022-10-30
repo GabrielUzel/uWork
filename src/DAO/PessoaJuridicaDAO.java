@@ -97,7 +97,7 @@ public class PessoaJuridicaDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setString(0, pessoaJuridica.getCNPJ());
+        pst.setString(1, pessoaJuridica.getCNPJ());
         pst.execute();
         pst.close();
         conexao.close();
