@@ -1,6 +1,10 @@
 package controller_telas;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import Controller.ControllerCanditado;
+import java.sql.SQLException;
+import Controller.ClassAlerta;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
