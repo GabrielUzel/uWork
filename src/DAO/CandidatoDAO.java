@@ -100,7 +100,7 @@ public class CandidatoDAO {
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-         pst.setInt(1, can.getIdCanditado());
+        pst.setInt(1, can.getIdCanditado());
         pst.setString(2, can.getNome());
         pst.setString(3, can.getCPF());
         pst.setString(4, can.getSobrenome());
