@@ -13,18 +13,18 @@ public class VagaDAO {
     public VagaDAO() {}
 
     public void criarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
-        String sql = "insert into vaga () values(?,?,?)";
+        String sql="insert into vaga () values(?,?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
+        
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, vaga.getIdVaga());
-        pst.setString(1, vaga.getNome());
-        pst.setString(3, vaga.getDescricao());
-        pst.setString(4, vaga.getTipoRegime());
-        pst.setDouble(5, vaga.getSalario());
-        pst.setString(6, vaga.getAreaAtuacao());
-
+        pst.setInt(1, can.getIdVaga());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getDescricao());
+        pst.setString(4, can.getTipoRegime());
+        pst.setDouble(5, can.getSalario());
+        pst.setString(6, can.getAreaAtuacao());
+        
         pst.close();
         conexao.close();
     }
@@ -88,19 +88,19 @@ public class VagaDAO {
     }
 
     public void atualizarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
-        String sql = "update  vaga set () values(?,?,?)";
+         String sql="update  vaga set () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
+        
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(0, vaga.getIdVaga());
-        pst.setString(1, vaga.getNome());
-        pst.setString(3, vaga.getDescricao());
-        pst.setString(4, vaga.getTipoRegime());
-        pst.setDouble(5, vaga.getSalario());
-        pst.setString(6, vaga.getAreaAtuacao());
-
+        pst.setInt(1, can.getIdVaga());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getDescricao());
+        pst.setString(4, can.getTipoRegime());
+        pst.setDouble(5, can.getSalario());
+        pst.setString(6, can.getAreaAtuacao());
+        
         pst.close();
         conexao.close();
     }
@@ -111,7 +111,7 @@ public class VagaDAO {
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, vaga.getIdVaga());
+        pst.setInt(1, vaga.getIdVaga());
         pst.execute();
         pst.close();
         conexao.close();
