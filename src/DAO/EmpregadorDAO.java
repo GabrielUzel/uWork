@@ -13,17 +13,15 @@ public class EmpregadorDAO {
     public EmpregadorDAO() {}
 
     public void criarEmpregador(Empregador empregador) throws SQLException, ClassNotFoundException {
-        String sql = "insert into empregador () values(?,?,?)";
+       String sql="insert into empregador () values(?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, empregador.getIdEmpregador());
-        pst.setString(1, empregador.getNome());
-        pst.setString(3, empregador.getSobrenome());
-        pst.setString(4, empregador.getEmail());
-        pst.setString(5, empregador.getTelefone());
-
+        pst.setInt(1, can.getIdEmpregador());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getSobrenome());
+        pst.setString(5, can.getEmail());
+        pst.setString(6, can.getTelefone());
         conexao.close();
     }
 
@@ -86,17 +84,15 @@ public class EmpregadorDAO {
     }
 
     public void atualizarEmpregador(Empregador empregador) throws SQLException, ClassNotFoundException {
-        String sql = "update  empregadorditado set () values(?,?,?)";
+        String sql="update  contratante set () values(?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
         pst = conexao.prepareStatement(sql);
-        pst.executeQuery();
-        pst.setInt(0, empregador.getIdEmpregador());
-        pst.setString(1, empregador.getNome());
-        pst.setString(3, empregador.getSobrenome());
-        pst.setString(4, empregador.getEmail());
-        pst.setString(5, empregador.getTelefone());
+        pst.setInt(1, can.getIdEmpregador());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getSobrenome());
+        pst.setString(5, can.getEmail());
+        pst.setString(6, can.getTelefone());
 
         pst.close();
         conexao.close();
@@ -108,7 +104,7 @@ public class EmpregadorDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, empregador.getIdEmpregador());
+        pst.setInt(1, empregador.getIdEmpregador());
         pst.execute();
         pst.close();
         conexao.close();
