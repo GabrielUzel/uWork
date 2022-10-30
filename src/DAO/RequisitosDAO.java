@@ -19,8 +19,8 @@ public class RequisitosDAO {
 
         pst = conexao.prepareStatement(sql);
         pst.setString(1, requisitos.getNomeRequisito());
-        pst.setString(3, requisitos.getAreaAtuacao());
-        pst.setInt(4, requisitos.getIdVaga());
+        pst.setString(2, requisitos.getAreaAtuacao());
+        pst.setInt(3, requisitos.getIdVaga());
 
         pst.close();
         conexao.close();
@@ -90,8 +90,8 @@ public class RequisitosDAO {
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
         pst.setString(1, requisitos.getNomeRequisito());
-        pst.setString(3, requisitos.getAreaAtuacao());
-        pst.setInt(4, requisitos.getIdVaga());
+        pst.setString(2, requisitos.getAreaAtuacao());
+        pst.setInt(3, requisitos.getIdVaga());
 
         pst.close();
         conexao.close();
@@ -103,7 +103,7 @@ public class RequisitosDAO {
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, requisitos.getIdVaga());
+        pst.setInt(1, requisitos.getIdVaga());
         pst.execute();
         pst.close();
         conexao.close();
