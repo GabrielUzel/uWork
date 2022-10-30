@@ -13,16 +13,16 @@ public class FormacaoDAO {
     public FormacaoDAO() {}
 
     public void criarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
-        String sql = "insert into formacao () values(?,?,?)";
+        String sql="insert into formacao () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, formacao.getIdCanditado());
-        pst.setString(1, formacao.getCurso());
-        pst.setString(3, formacao.getInstituição());
-        pst.setInt(4, formacao.getTempoDuracao());
-
+        pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getCurso());
+        pst.setString(3, can.getInstituição());
+        pst.setInt(4, can.getTempoDuracao());
+        
         pst.close();
         conexao.close();
     }
@@ -84,17 +84,17 @@ public class FormacaoDAO {
     }
 
     public void atualizarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
-        String sql = "update  formacao set () values(?,?,?)";
+        String sql="update  formacao set () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(0, formacao.getIdCanditado());
-        pst.setString(1, formacao.getCurso());
-        pst.setString(3, formacao.getInstituição());
-        pst.setInt(4, formacao.getTempoDuracao());
-
+        pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getCurso());
+        pst.setString(3, can.getInstituição());
+        pst.setInt(4, can.getTempoDuracao());
+        
         pst.close();
         conexao.close();
     }
@@ -105,7 +105,7 @@ public class FormacaoDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, formacao.getIdCanditado());
+        pst.setInt(1, formacao.getIdCanditado());
         pst.execute();
         pst.close();
         conexao.close();
