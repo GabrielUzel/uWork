@@ -13,17 +13,18 @@ public class ExperienciaDAO {
     public ExperienciaDAO() {}
 
     public void criarExperiencia(Experiencia experiencia) throws SQLException, ClassNotFoundException {
-        String sql = "insert into experiencia () values(?,?,?)";
+        String sql="insert into experiencia () values(?,?,?,?,?)";
+        
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
+        
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, experiencia.getIdCanditado());
-        pst.setString(1, experiencia.getCargo());
-        pst.setString(3, experiencia.getEmpresa());
-        pst.setString(4, experiencia.setAreaDeAtuacao());
-        pst.setInt(5, experiencia.getTempoServico());
-
+        pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getCargo());
+        pst.setString(3, can.getEmpresa());
+        pst.setString(4, can.setAreaDeAtuacao());
+        pst.setInt(5, can.getTempoServico());
+        
         pst.close();
         conexao.close();
     }
@@ -87,18 +88,19 @@ public class ExperienciaDAO {
     }
 
     public void atualizarExperiencia(Experiencia experiencia) throws SQLException, ClassNotFoundException {
-        String sql = "update  experiencia set () values(?,?,?)";
+       String sql="update  experiencia set () values(?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
-
+        
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(0, experiencia.getIdCanditado());
-        pst.setString(1, experiencia.getCargo());
-        pst.setString(3, experiencia.getEmpresa());
-        pst.setString(4, experiencia.setAreaDeAtuacao());
-        pst.setInt(5, experiencia.getTempoServico());
-
+        pst = conexao.prepareStatement(sql);
+        pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getCargo());
+        pst.setString(3, can.getEmpresa());
+        pst.setString(4, can.setAreaDeAtuacao());
+        pst.setInt(5, can.getTempoServico());
+        
         pst.close();
         conexao.close();
     }
