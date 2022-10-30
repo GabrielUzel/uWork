@@ -15,18 +15,19 @@ public class CandidatoDAO {
     public CandidatoDAO() {}
 
     public void criarCanditado(Canditado candidato) throws SQLException, ClassNotFoundException {
-        String sql = "insert into canditado () values(?,?,?)";
+        String sql = "insert into candidato () values(?,?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, candidato.getIdCanditado());
-        pst.setString(1, candidato.getNome());
-        pst.setString(2, candidato.getCPF());
-        pst.setString(3, candidato.getSobrenome());
-        pst.setString(4, candidato.getEmail());
-        pst.setString(5, candidato.getTelefone());
-        pst.setDate(6, (Date) candidato.getDataNascimento());
+        pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getCPF());
+        pst.setString(4, can.getSobrenome());
+        pst.setString(5, can.getEmail());
+        pst.setString(6, can.getTelefone());
+        //pst.setDate(6, (Date) can.getDataNascimento());
+        //pst.setString(7, can.getSenha());
 
         pst.close();
         conexao.close();
@@ -93,19 +94,19 @@ public class CandidatoDAO {
     }
 
     public void atualizarCandidato(Canditado candidato) throws SQLException, ClassNotFoundException {
-        String sql = "update  canditado set () values(?,?,?)";
+        String sql="update  canditado set () values(?,?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(0, candidato.getIdCanditado());
-        pst.setString(1, candidato.getNome());
-        pst.setString(2, candidato.getCPF());
-        pst.setString(3, candidato.getSobrenome());
-        pst.setString(4, candidato.getEmail());
-        pst.setString(5, candidato.getTelefone());
-        pst.setDate(6, (Date) candidato.getDataNascimento());
+         pst.setInt(1, can.getIdCanditado());
+        pst.setString(2, can.getNome());
+        pst.setString(3, can.getCPF());
+        pst.setString(4, can.getSobrenome());
+        pst.setString(5, can.getEmail());
+        pst.setString(6, can.getTelefone());
+        //pst.setDate(6, (Date) can.getDataNascimento());
 
         pst.close();
         conexao.close();
