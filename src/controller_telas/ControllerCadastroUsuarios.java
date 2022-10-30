@@ -5,6 +5,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class ControllerCadastroUsuarios {
+    private ControllerCanditado cad = new ControllerCanditado();
+    private ClassAlerta alerta = new ClassAlerta();
     @FXML
     private Button btn_criarConta;
 
@@ -31,4 +33,25 @@ public class ControllerCadastroUsuarios {
 
     @FXML
     private TextField txt_telefone2;
+
+    @FXML
+    void btn_criarContaFUn(ActionEvent event) {
+        try {
+            cad.cadastraCandidato(txt_nome.getText(),txt_nome.getText(),txt_cpf.getText(),txt_telefone.getText(),txt_senha.getText());
+            alerta.informacao("Atenção", "Usuario cadastrado com sucesso", "uWork bom de mais");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            alerta.erro("erro", e.getMessage(), "um erro aconteceu");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            alerta.erro("erro", e.getMessage(), "um erro aconteceu");
+        }
+
+    }
+
+    @FXML
+    void btn_voltarFUN(ActionEvent event) {
+        
+    }
+
 }
