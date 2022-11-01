@@ -4,17 +4,18 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import java.io.IOException;
 import java.sql.SQLException;
-import Controller.ChamaOutraTela;
-import Controller.ClassAlerta;
-import Controller.ControllerVaga;
+import controller.ChamaOutraTela;
+import controller.ClassAlerta;
+import controller.ControllerVaga;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class ControllerCadastroVaga {
     private ChamaOutraTela chama = new ChamaOutraTela();
-    private ControllerVaga conVaga = new ControllerVaga();
+    private ControllerVaga controllerVaga = new ControllerVaga();
     private ClassAlerta alerta = new ClassAlerta();
+
     @FXML
     private Button btn_requisitos;
 
@@ -42,7 +43,7 @@ public class ControllerCadastroVaga {
     @FXML
     void btn_cadastrarFUN(ActionEvent event) {
         try {
-            conVaga.cadastraVaga(txt_nomeVaga.getText(), txt_area.getText(), txt_descricao.getText(), 0, 0.0);
+            controllerVaga.cadastraVaga(txt_nomeVaga.getText(), txt_area.getText(), txt_descricao.getText(), 0, 0.0);
             alerta.informacao("Atenção", " Vaga cadastrada com sucesso", "uWork bom de mais");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -65,11 +66,9 @@ public class ControllerCadastroVaga {
     @FXML
     void btn_requisitosFun(ActionEvent event) {
         try {
-            chama.chamar("/View/BaseTela.fxml","Requisitos");
+            chama.chamar("/view/BaseTela.fxml","Requisitos");
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
     }
 }

@@ -2,15 +2,16 @@ package controller_telas;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import Controller.ControllerCanditado;
+import controller.ControllerCandidato;
 import java.sql.SQLException;
-import Controller.ClassAlerta;
+import controller.ClassAlerta;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class ControllerCadastroUsuarios {
-    private ControllerCanditado cad = new ControllerCanditado();
+    private ControllerCandidato candidato = new ControllerCandidato();
     private ClassAlerta alerta = new ClassAlerta();
+
     @FXML
     private Button btn_criarConta;
 
@@ -41,7 +42,8 @@ public class ControllerCadastroUsuarios {
     @FXML
     void btn_criarContaFUn(ActionEvent event) {
         try {
-            cad.cadastraCandidato(txt_nome.getText(),txt_nome.getText(),txt_cpf.getText(),txt_telefone.getText(),txt_senha.getText());
+            // TO-DO: mudar o cadastra candidato de controller candidato para admitir email e senha
+            candidato.cadastraCandidato(txt_nome.getText(), txt_nome.getText(), txt_cpf.getText(), txt_telefone.getText(), txt_senha.getText());
             alerta.informacao("Atenção", "Usuario cadastrado com sucesso", "uWork bom de mais");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -50,12 +52,10 @@ public class ControllerCadastroUsuarios {
             e.printStackTrace();
             alerta.erro("erro", e.getMessage(), "um erro aconteceu");
         }
-
     }
 
     @FXML
     void btn_voltarFUN(ActionEvent event) {
         
     }
-
 }
