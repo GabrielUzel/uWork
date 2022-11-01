@@ -119,3 +119,145 @@ MODELAGEM
     - DATA_FIM
     - DESCRICAO
     - EMPRESA
+
+
+SQL
+
+/* Logico_uwork: */
+
+CREATE TABLE Usuario (
+    email VARCHAR PRIMARY KEY,
+    senha VARCHAR
+);
+
+CREATE TABLE Empregador (
+    id SERIAL,
+    nome VARCHAR,
+    endereco VARCHAR,
+    telefone NUMERIC,
+    fk_Usuario_email VARCHAR,
+    PRIMARY KEY (id, fk_Usuario_email)
+);
+
+CREATE TABLE Candidato (
+    id SERIAL,
+    nome VARCHAR,
+    cpf NUMERIC,
+    endereco VARCHAR,
+    telefone NUMERIC,
+    fk_Usuario_email VARCHAR,
+    PRIMARY KEY (id, fk_Usuario_email)
+);
+
+CREATE TABLE PF (
+    CPF NUMERIC,
+    FK_Empregador_id SERIAL,
+    FK_Empregador_fk_Usuario_email VARCHAR,
+    PRIMARY KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
+);
+
+CREATE TABLE PJ (
+    CNPJ NUMERIC,
+    razao_social VARCHAR,
+    FK_Empregador_id SERIAL,
+    FK_Empregador_fk_Usuario_email VARCHAR,
+    PRIMARY KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
+);
+
+CREATE TABLE Experiencia (
+    id SERIAL PRIMARY KEY,
+    cargo VARCHAR,
+    data_inicio DATE,
+    data_fim DATE,
+    descricao VARCHAR,
+    nome_empresa VARCHAR,
+    fk_Candidato_id SERIAL,
+    fk_Candidato_fk_Usuario_email VARCHAR
+);
+
+CREATE TABLE Formacao (
+    id SERIAL PRIMARY KEY,
+    curso VARCHAR,
+    instituicao VARCHAR,
+    fk_Candidato_id SERIAL,
+    fk_Candidato_fk_Usuario_email VARCHAR
+);
+
+CREATE TABLE Vaga (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR,
+    area_atuacao VARCHAR,
+    regime VARCHAR,
+    descricao VARCHAR,
+    salario DECIMAL,
+    data_criacao DATE,
+    data_limite DATE,
+    fk_Empregador_id SERIAL,
+    fk_Empregador_fk_Usuario_email VARCHAR
+);
+
+CREATE TABLE Requisito (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR,
+    descricao VARCHAR,
+    fk_Vaga_id SERIAL
+);
+
+CREATE TABLE Candidatura (
+    status BOOLEAN,
+    id SERIAL PRIMARY KEY,
+    data_candidatura DATE,
+    fk_Vaga_id SERIAL,
+    fk_Candidato_id SERIAL,
+    fk_Candidato_fk_Usuario_email VARCHAR
+);
+ 
+ALTER TABLE Empregador ADD CONSTRAINT FK_Empregador_2
+    FOREIGN KEY (fk_Usuario_email)
+    REFERENCES Usuario (email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Candidato ADD CONSTRAINT FK_Candidato_2
+    FOREIGN KEY (fk_Usuario_email)
+    REFERENCES Usuario (email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE PF ADD CONSTRAINT FK_PF_2
+    FOREIGN KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
+    REFERENCES Empregador (id, fk_Usuario_email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE PJ ADD CONSTRAINT FK_PJ_2
+    FOREIGN KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
+    REFERENCES Empregador (id, fk_Usuario_email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Experiencia ADD CONSTRAINT FK_Experiencia_2
+    FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
+    REFERENCES Candidato (id, fk_Usuario_email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Formacao ADD CONSTRAINT FK_Formacao_2
+    FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
+    REFERENCES Candidato (id, fk_Usuario_email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Vaga ADD CONSTRAINT FK_Vaga_2
+    FOREIGN KEY (fk_Empregador_id, fk_Empregador_fk_Usuario_email)
+    REFERENCES Empregador (id, fk_Usuario_email)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Requisito ADD CONSTRAINT FK_Requisito_2
+    FOREIGN KEY (fk_Vaga_id)
+    REFERENCES Vaga (id)
+    ON DELETE RESTRICT;
+ 
+ALTER TABLE Candidatura ADD CONSTRAINT FK_Candidatura_2
+    FOREIGN KEY (fk_Vaga_id)
+    REFERENCES Vaga (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE Candidatura ADD CONSTRAINT FK_Candidatura_3
+    FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
+    REFERENCES Candidato (id, fk_Usuario_email)
+    ON DELETE CASCADE;
