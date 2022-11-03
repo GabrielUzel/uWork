@@ -214,38 +214,31 @@ CREATE TABLE Candidatura (
  
 ALTER TABLE Empregador ADD CONSTRAINT FK_Empregador_2
     FOREIGN KEY (fk_Usuario_email)
-    REFERENCES Usuario (email)
-    ON DELETE CASCADE;
+    REFERENCES Usuario (email);
  
 ALTER TABLE Candidato ADD CONSTRAINT FK_Candidato_2
     FOREIGN KEY (fk_Usuario_email)
-    REFERENCES Usuario (email)
-    ON DELETE CASCADE;
+    REFERENCES Usuario (email);
  
 ALTER TABLE PF ADD CONSTRAINT FK_PF_2
     FOREIGN KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
-    REFERENCES Empregador (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Empregador (id, fk_Usuario_email);
  
 ALTER TABLE PJ ADD CONSTRAINT FK_PJ_2
     FOREIGN KEY (FK_Empregador_id, FK_Empregador_fk_Usuario_email)
-    REFERENCES Empregador (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Empregador (id, fk_Usuario_email);
  
 ALTER TABLE Experiencia ADD CONSTRAINT FK_Experiencia_2
     FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
-    REFERENCES Candidato (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Candidato (id, fk_Usuario_email);
  
 ALTER TABLE Formacao ADD CONSTRAINT FK_Formacao_2
     FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
-    REFERENCES Candidato (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Candidato (id, fk_Usuario_email);
  
 ALTER TABLE Vaga ADD CONSTRAINT FK_Vaga_2
     FOREIGN KEY (fk_Empregador_id, fk_Empregador_fk_Usuario_email)
-    REFERENCES Empregador (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Empregador (id, fk_Usuario_email;
  
 ALTER TABLE Requisito ADD CONSTRAINT FK_Requisito_2
     FOREIGN KEY (fk_Vaga_id)
@@ -254,10 +247,8 @@ ALTER TABLE Requisito ADD CONSTRAINT FK_Requisito_2
  
 ALTER TABLE Candidatura ADD CONSTRAINT FK_Candidatura_2
     FOREIGN KEY (fk_Vaga_id)
-    REFERENCES Vaga (id)
-    ON DELETE CASCADE;
+    REFERENCES Vaga (id);
  
 ALTER TABLE Candidatura ADD CONSTRAINT FK_Candidatura_3
     FOREIGN KEY (fk_Candidato_id, fk_Candidato_fk_Usuario_email)
-    REFERENCES Candidato (id, fk_Usuario_email)
-    ON DELETE CASCADE;
+    REFERENCES Candidato (id, fk_Usuario_email);
