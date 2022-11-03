@@ -6,7 +6,7 @@ CREATE TABLE uwork.Usuario (
     u_logradouro VARCHAR(50),
     u_numero NUMERIC(5),
     u_bairro VARCHAR(20),
-    u_complemento VARCHAR(20)
+    u_complemento VARCHAR(20),
     u_cidade VARCHAR(20),
     u_estado VARCHAR(20),
     u_pais VARCHAR(20),
@@ -110,7 +110,7 @@ FOREIGN KEY (v_fk_Usuario_email) REFERENCES uwork.Usuario (u_email);
 
 
 ALTER TABLE uwork.Requisito ADD CONSTRAINT FK_Requisito_2
-FOREIGN KEY (b_fk_Vaga_id) REFERENCES uwork.Vaga (v_id);
+FOREIGN KEY (r_fk_Vaga_id) REFERENCES uwork.Vaga (v_id);
 
 
 ALTER TABLE uwork.Candidatura ADD CONSTRAINT FK_Candidatura_2
