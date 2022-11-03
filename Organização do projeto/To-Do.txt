@@ -1,3 +1,9 @@
-- Testar o banco de dados
+- Testar o banco de dados (ok)
 
-- Fazer a parte de telas 
+- Fazer a parte de telas (Vinicius)
+
+- Modificar as classes modelo (Gabriel)
+
+- Modificar as classes de controller das telas 
+
+- 
