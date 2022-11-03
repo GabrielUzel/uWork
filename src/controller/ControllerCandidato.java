@@ -10,7 +10,7 @@ public class ControllerCandidato {
 
     public ControllerCandidato() {}
 
-    public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException {
+    public void cadastraCandidato(String nome, String sobrenome) throws ClassNotFoundException, SQLException {
         Canditado candidato = new Canditado();
         candidato.setCPF(sobrenome);
         candidato.setNome(nome);

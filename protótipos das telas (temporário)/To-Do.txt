@@ -1,0 +1,3 @@
+- Testar o banco de dados
+
+- Fazer a parte de telas 

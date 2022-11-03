@@ -10,7 +10,7 @@ CREATE TABLE uwork.Usuario (
     u_cidade VARCHAR(20),
     u_estado VARCHAR(20),
     u_pais VARCHAR(20),
-    u_cep NUMERIC(8)
+    u_cep NUMERIC(8),
     u_telefone NUMERIC(11)
 );
 
