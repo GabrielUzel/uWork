@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import DAO.CandidatoDAO;
 import model.Canditado;
 
-public class ControllerCanditado {
+public class ControllerCandidato {
     private CandidatoDAO candidatoDao = new CandidatoDAO();
 
-    public ControllerCanditado() {}
+    public ControllerCandidato() {}
 
     public void cadastraCandidato(String nome,String sobrenome) throws ClassNotFoundException, SQLException {
         Canditado candidato = new Canditado();

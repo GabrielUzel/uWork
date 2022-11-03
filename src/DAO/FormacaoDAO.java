@@ -18,10 +18,10 @@ public class FormacaoDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getCurso());
-        pst.setString(3, can.getInstituição());
-        pst.setInt(4, can.getTempoDuracao());
+        pst.setInt(1, formacao.getIdCanditado());
+        pst.setString(2, formacao.getCurso());
+        pst.setString(3, formacao.getInstituição());
+        pst.setInt(4, formacao.getTempoDuracao());
         
         pst.close();
         conexao.close();
@@ -90,10 +90,10 @@ public class FormacaoDAO {
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getCurso());
-        pst.setString(3, can.getInstituição());
-        pst.setInt(4, can.getTempoDuracao());
+        pst.setInt(1, formacao.getIdCanditado());
+        pst.setString(2, formacao.getCurso());
+        pst.setString(3, formacao.getInstituição());
+        pst.setInt(4, formacao.getTempoDuracao());
         
         pst.close();
         conexao.close();

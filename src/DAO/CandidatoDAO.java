@@ -1,7 +1,7 @@
 package DAO;
 
 import java.sql.Connection;
-import java.sql.Date;
+//import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -20,12 +20,12 @@ public class CandidatoDAO {
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getNome());
-        pst.setString(3, can.getCPF());
-        pst.setString(4, can.getSobrenome());
-        pst.setString(5, can.getEmail());
-        pst.setString(6, can.getTelefone());
+        pst.setInt(1, candidato.getIdCanditado());
+        pst.setString(2, candidato.getNome());
+        pst.setString(3, candidato.getCPF());
+        pst.setString(4, candidato.getSobrenome());
+        pst.setString(5, candidato.getEmail());
+        pst.setString(6, candidato.getTelefone());
         //pst.setDate(6, (Date) can.getDataNascimento());
         //pst.setString(7, can.getSenha());
 
@@ -100,12 +100,12 @@ public class CandidatoDAO {
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getNome());
-        pst.setString(3, can.getCPF());
-        pst.setString(4, can.getSobrenome());
-        pst.setString(5, can.getEmail());
-        pst.setString(6, can.getTelefone());
+        pst.setInt(1, candidato.getIdCanditado());
+        pst.setString(2, candidato.getNome());
+        pst.setString(3, candidato.getCPF());
+        pst.setString(4, candidato.getSobrenome());
+        pst.setString(5, candidato.getEmail());
+        pst.setString(6, candidato.getTelefone());
         //pst.setDate(6, (Date) can.getDataNascimento());
 
         pst.close();

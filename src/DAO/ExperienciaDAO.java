@@ -19,11 +19,11 @@ public class ExperienciaDAO {
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getCargo());
-        pst.setString(3, can.getEmpresa());
-        pst.setString(4, can.setAreaDeAtuacao());
-        pst.setInt(5, can.getTempoServico());
+        pst.setInt(1, experiencia.getIdCanditado());
+        pst.setString(2, experiencia.getCargo());
+        pst.setString(3, experiencia.getEmpresa());
+        pst.setString(4, experiencia.setAreaDeAtuacao());
+        pst.setInt(5, experiencia.getTempoServico());
         
         pst.close();
         conexao.close();
@@ -95,11 +95,11 @@ public class ExperienciaDAO {
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, can.getIdCanditado());
-        pst.setString(2, can.getCargo());
-        pst.setString(3, can.getEmpresa());
-        pst.setString(4, can.setAreaDeAtuacao());
-        pst.setInt(5, can.getTempoServico());
+        pst.setInt(1, experiencia.getIdCanditado());
+        pst.setString(2, experiencia.getCargo());
+        pst.setString(3, experiencia.getEmpresa());
+        pst.setString(4, experiencia.setAreaDeAtuacao());
+        pst.setInt(5, experiencia.getTempoServico());
         
         pst.close();
         conexao.close();
