@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="-4.0" prefHeight="521.0" prefWidth="327.0" style="-fx-background-color: A9D6E5;">
+         <children>
+            <Label layoutX="115.0" layoutY="19.0" text="UWork">
+               <font>
+                  <Font name="Arial Bold" size="30.0" />
+               </font>
+            </Label>
+            <Button layoutX="24.0" layoutY="75.0" mnemonicParsing="false" opacity="0.1" prefHeight="388.0" prefWidth="289.0" style="-fx-background-radius: 15; -fx-background-color: 2A6F97;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="277.0" layoutY="7.0" prefHeight="36.0" prefWidth="33.0" style="-fx-background-color: #2A6F97; -fx-text-fill: white; -fx-background-radius: 15;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="24.0" fitWidth="26.0" layoutX="280.0" layoutY="13.0">
+               <image>
+                  <Image url="@imagens/perfil.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="245.0" layoutY="46.0" prefHeight="17.0" prefWidth="97.0" text="Perfil" textAlignment="CENTER" />
+            <ScrollPane layoutX="24.0" layoutY="68.0" prefHeight="425.0" prefWidth="282.0" style="-fx-background-color: A9D6E5;">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="266.0" style="-fx-background-color: A9D6E5;">
+                     <children>
+                        <Pane prefHeight="244.0" prefWidth="271.0">
+                           <children>
+                              <Button mnemonicParsing="false" opacity="0.2" prefHeight="238.0" prefWidth="265.0" style="-fx-background-radius: 15; -fx-background-color: 2A6F97;">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Label layoutX="11.0" layoutY="4.0" prefHeight="27.0" prefWidth="167.0" style="-fx-text-fill: black;" text="Nome da empresa" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="58.0" prefHeight="27.0" prefWidth="167.0" style="-fx-text-fill: black;" text="Tipo de regime" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="31.0" prefHeight="27.0" prefWidth="167.0" style="-fx-text-fill: black;" text="Titulo da vaga" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="85.0" prefHeight="27.0" prefWidth="167.0" style="-fx-text-fill: black;" text="Salario" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextArea layoutX="11.0" layoutY="139.0" prefHeight="84.0" prefWidth="243.0" />
+                              <Label layoutX="11.0" layoutY="112.0" prefHeight="27.0" prefWidth="167.0" style="-fx-text-fill: black;" text="Descrição:" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
