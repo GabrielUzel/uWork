@@ -6,7 +6,6 @@ public class Vaga {
     private String areaAtuacao;
     private String descricao;
     private int id_vaga;
-    private Empregador empregador;
     private String tipoRegime;
     private double salario;
 
