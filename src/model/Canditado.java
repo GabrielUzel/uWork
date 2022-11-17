@@ -9,8 +9,6 @@ public class Canditado {
     private String sobrenome;
     private String email;
     private String telefone;
-    private Formacao formacao;
-    private Experiencia experiencia;
     private Date dataNascimeto;
     private String CPF;
 

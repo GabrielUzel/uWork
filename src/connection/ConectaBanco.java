@@ -10,7 +10,7 @@ public class ConectaBanco {
     public Connection conectar() throws  SQLException, ClassNotFoundException {
         Connection conexao = null;
         Class.forName("org.postgresql.Driver");
-        conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/uwork", "postgres", "12345");//mudar senha e usuario
+        conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "3626");//mudar senha e usuario
 
         return conexao;
     }
