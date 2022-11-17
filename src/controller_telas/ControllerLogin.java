@@ -79,9 +79,8 @@ public class ControllerLogin {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
         }else{
             try {
-                //tela.chamar("/view/Home.fxml","Tela inicial");
-                ControllerHome ch = new ControllerHome();
-                ch.chamar("/view/Home.fxml", "Tela inicial", id);
+                ControllerEscolherUsuario eu = new ControllerEscolherUsuario();
+                eu.chamar("/view/EscolherUsuario.fxml", "Escolher Usuário", id);
             } catch(IOException e) {
                 e.printStackTrace();
                 alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
