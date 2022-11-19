@@ -15,6 +15,7 @@ import controller.ChamaOutraTela;
 import controller.ClassAlerta;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import model.CacheUsuario;
 
 public class ControllerLogin {
     private ChamaOutraTela tela = new ChamaOutraTela();
@@ -47,6 +48,7 @@ public class ControllerLogin {
 
     @FXML
     void btn_entrarFUN(ActionEvent event) {
+        CacheUsuario cacheUsuario = new CacheUsuario();
         PreparedStatement stmt;
         Connection conexao;
         ResultSet rs;
@@ -63,6 +65,7 @@ public class ControllerLogin {
                 check=true;
                 System.out.println(rs.getString("u_email"));
                 id=rs.getString("u_email");
+                cacheUsuario.setUsuario(id);
             }
             
             rs.close();

@@ -79,8 +79,8 @@ public class ControllerEscolherUsuario {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
         }else{
             try {
-                ControllerHome ch = new ControllerHome();
-                ch.chamar("/view/Home.fxml", "Tela inicial", id2);
+                ChamaOutraTela ot = new ChamaOutraTela();
+                ot.chamar("/view/Home.fxml", "Tela inicial");
             } catch(IOException e) {
                 e.printStackTrace();
                 alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
@@ -122,8 +122,8 @@ public class ControllerEscolherUsuario {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
         }else{
             try {
-                ControllerHome ch = new ControllerHome();
-                ch.chamar("/view/Home.fxml", "Tela inicial", id2);
+                ChamaOutraTela ot = new ChamaOutraTela();
+                ot.chamar("/view/HomeContratante.fxml", "Tela inicial");
             } catch(IOException e) {
                 e.printStackTrace();
                 alerta.erro("Erro", e.getMessage(), "aconteceu um erro");

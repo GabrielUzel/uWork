@@ -7,19 +7,26 @@ import java.sql.SQLException;
 import connection.ConectaBanco;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.CacheUsuario;
 import model.PessoaJuridica;
 
 public class PessoaJuridicaDAO {
+    CacheUsuario cacheUsuario = new CacheUsuario();
+
     public PessoaJuridicaDAO(){}
 
     public void criarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
-        String sql = "insert into pessoajuridica () values(?,?,?)";
+        String sql = "INSERT INTO uwork.pj VALUES(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setString(1, pessoaJuridica.getCNPJ());
+        pst.setLong(1, Long.parseLong(pessoaJuridica.getCNPJ()));
         pst.setString(2, pessoaJuridica.getRazaoSocial());
+        pst.setString(3, cacheUsuario.getUsuario());
+
+        pst.execute();
 
         pst.close();
         conexao.close();

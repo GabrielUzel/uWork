@@ -7,19 +7,24 @@ import java.sql.SQLException;
 import connection.ConectaBanco;
 import java.util.ArrayList;
 import java.util.List;
+
+import model.CacheUsuario;
 import model.PessoaFisica;
 
 public class PessoaFisicaDAO {
     public PessoaFisicaDAO(){}
+    CacheUsuario cacheUsuario = new CacheUsuario();
 
     public void criarPessoaFisica(PessoaFisica pessoaFisica) throws SQLException, ClassNotFoundException {
-        String sql = "insert into pessoafisica () values(?,?,?)";
+        String sql = "INSERT INTO uwork.pf VALUES(?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setString(1, pessoaFisica.getCPF());
-        pst.setString(2, pessoaFisica.getCategoriaServico());
+        pst.setLong(1, Long.parseLong(pessoaFisica.getCPF()));
+        pst.setString(2, cacheUsuario.getUsuario());
+
+        pst.execute();
 
         pst.close();
         conexao.close();
