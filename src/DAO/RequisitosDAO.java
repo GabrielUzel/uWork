@@ -103,7 +103,7 @@ public class RequisitosDAO {
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setString(1, requisito);
+        pst.setString(1, requisitos);
         pst.execute();
         pst.close();
         conexao.close();
