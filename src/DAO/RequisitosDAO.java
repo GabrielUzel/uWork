@@ -97,13 +97,13 @@ public class RequisitosDAO {
         conexao.close();
     }
 
-    public void deletarRequisitos(Requisitos requisitos) throws SQLException, ClassNotFoundException {
-        String sql = "delete from requisitos where id=?";
+    public void deletarRequisitos(String requisitos) throws SQLException, ClassNotFoundException {
+        String sql = "delete from requisitos where nome=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, requisitos.getIdVaga());
+        pst.setString(1, requisitos);
         pst.execute();
         pst.close();
         conexao.close();
