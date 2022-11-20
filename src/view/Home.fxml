@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller_telas.ControllerHome">
    <children>
       <Pane layoutX="-4.0" prefHeight="521.0" prefWidth="327.0" style="-fx-background-color: A9D6E5;">
          <children>
@@ -24,7 +24,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="51.0" layoutY="395.0">
                <image>
-                  <Image url="@../../../4%20semestre/BD1/projetoV1/imagens/adicionar.png" />
+                  <Image url="@imagens/adicionar.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="40.0" layoutY="481.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Adicionar vaga" textAlignment="CENTER" />
@@ -40,7 +40,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="51.0" layoutY="260.0">
                <image>
-                  <Image url="@../../../4%20semestre/BD1/projetoV1/imagens/pesquisar.png" />
+                  <Image url="@imagens/pesquisar.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="40.0" layoutY="346.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Minhas Vagas" textAlignment="CENTER" />
@@ -56,7 +56,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="208.0" layoutY="392.0">
                <image>
-                  <Image url="@../../../4%20semestre/BD1/projetoV1/imagens/remover.png" />
+                  <Image url="@imagens/remover.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="199.0" layoutY="474.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Remover vaga" textAlignment="CENTER" />
@@ -72,7 +72,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="106.0" layoutX="194.0" layoutY="268.0">
                <image>
-                  <Image url="@../../../4%20semestre/BD1/projetoV1/imagens/perfil.png" />
+                  <Image url="@imagens/perfil.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="198.0" layoutY="346.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Perfil" textAlignment="CENTER" />
@@ -93,7 +93,7 @@
             </Label>
             <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="50.0" layoutY="123.0">
                <image>
-                  <Image url="@../../../4%20semestre/BD1/projetoV1/imagens/adicionar.png" />
+                  <Image url="@imagens/adicionar.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" layoutX="39.0" layoutY="209.0" prefHeight="17.0" prefWidth="97.0" style="-fx-text-fill: white;" text="Candidatar" textAlignment="CENTER" />
