@@ -38,7 +38,7 @@ public class ControllerRequisitos {
         requisitosDao.atualizarRequisitos(requisitos);
     }
 
-    public void deletarRequisitos(Requisitos requisitos) throws ClassNotFoundException, SQLException {
+    public void deletarRequisitos(String requisitos) throws ClassNotFoundException, SQLException {
         requisitosDao.deletarRequisitos(requisitos);
     }
 }
