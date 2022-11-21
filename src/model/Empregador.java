@@ -12,7 +12,7 @@ public class Empregador {
     private Date dataNascimeto;
 
     // Construtor
-    public Empregador(){}
+    public Empregador() {}
 
     // Setters
     public void setIdEmpregador(int id_empregador) { this.id_empregador = id_empregador; }

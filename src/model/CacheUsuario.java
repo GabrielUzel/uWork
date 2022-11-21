@@ -1,13 +1,13 @@
 package model;
 
-public class CacheUsuario{
+public class CacheUsuario {
     private static String usuario;
     
-    public void setUsuario(String u){
+    public void setUsuario(String u) {
         CacheUsuario.usuario = u;
     }
 
-    public String getUsuario(){
+    public String getUsuario() {
         return CacheUsuario.usuario;
     }
 }
