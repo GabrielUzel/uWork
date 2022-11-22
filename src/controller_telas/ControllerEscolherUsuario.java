@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.swing.JOptionPane;
+
 
 import connection.ConectaBanco;
 import controller.ChamaOutraTela;
@@ -71,12 +71,14 @@ public class ControllerEscolherUsuario {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            alerta.erro("Erro", "Usuário não foi cadastrado como pessoa fisica",e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            alerta.erro("Erro", "Usuário não foi cadastrado como pessoa fisica",e.getMessage());
         }
         
         if(!check){
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+            alerta.erro("Erro", "Usuario não cadastrado no sistema", null);
         }else{
             try {
                 ChamaOutraTela ot = new ChamaOutraTela();
@@ -113,13 +115,14 @@ public class ControllerEscolherUsuario {
             conexao.close();
 
         } catch (SQLException e) {
+            alerta.erro("Erro", "Usuário não foi cadastrado como pessoa juridica",e.getMessage());
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         
         if(!check){
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+           alerta.erro("Erro", "Usuario não cadastrado no sistema", null);
         }else{
             try {
                 ChamaOutraTela ot = new ChamaOutraTela();
