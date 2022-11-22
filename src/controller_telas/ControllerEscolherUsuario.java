@@ -71,12 +71,14 @@ public class ControllerEscolherUsuario {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            tela.erro("Erro", "Usuário não foi cadastrado como pessoa fisica",e.getMessage());
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            tela.erro("Erro", "Usuário não foi cadastrado como pessoa fisica",e.getMessage());
         }
         
         if(!check){
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+            tela.erro("Erro", "Usuario não cadastrado no sistema", null);
         }else{
             try {
                 ChamaOutraTela ot = new ChamaOutraTela();
@@ -113,13 +115,14 @@ public class ControllerEscolherUsuario {
             conexao.close();
 
         } catch (SQLException e) {
+            tela.erro("Erro", "Usuário não foi cadastrado como pessoa juridica",e.getMessage());
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         
         if(!check){
-            JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
+           tela.erro("Erro", "Usuario não cadastrado no sistema", null);
         }else{
             try {
                 ChamaOutraTela ot = new ChamaOutraTela();
