@@ -55,7 +55,7 @@ public class ControllerCadastroUsuariosJuridica {
     private TextField tfEstado;
 
     @FXML
-    void btCadastrar(ActionEvent event) {
+    void btn_cadastrarPessoaJuridica(ActionEvent event) {
         String nome = tfNome.getText();
         String Email = tfEmail.getText();
         String senha = tfSenha.getText();
