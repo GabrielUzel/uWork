@@ -5,30 +5,46 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import connection.ConectaBanco;
-import java.util.ArrayList;
-import java.util.List;
 import model.Vaga;
 
 public class VagaDAO {
     public VagaDAO() {}
 
-    public void criarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
-        String sql = "insert into vaga () values(?,?,?,?,?,?)";
+    public int criarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
+        int idVaga = -1;
+        
+        String sql = "INSERT INTO uwork.vaga (v_nome, v_area_atuacao,v_regime,v_descricao,v_salario,v_data_criacao, v_data_limite, v_status , v_fk_Usuario_email) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?);";
         PreparedStatement pst;
+        ResultSet rs = null;
         Connection conexao = new ConectaBanco().conectar();
         
         pst = conexao.prepareStatement(sql);
-        pst.setInt(1, vaga.getIdVaga());
-        pst.setString(2, vaga.getNome());
-        pst.setString(3, vaga.getDescricao());
-        pst.setString(4, vaga.getTipoRegime());
+        pst.setString(1, vaga.getNomeVaga());
+        pst.setString(2, vaga.getArea());
+        pst.setString(3, vaga.getRegime());
+        pst.setString(4, vaga.getDescricao());
         pst.setDouble(5, vaga.getSalario());
-        pst.setString(6, vaga.getAreaAtuacao());
-        
-        pst.close();
-        conexao.close();
-    }
+        pst.setDate(6, vaga.getDataAtualString());
+        pst.setDate(7, vaga.getDataLimite());
+        pst.setString(8, vaga.getStatus());
+        pst.setString(9, vaga.getEmail());
 
+        pst.execute();
+
+        rs = pst.getGeneratedKeys();
+        System.out.println("resset "+rs);
+        while(rs.next()){
+            idVaga = rs.getInt("v_id");
+            System.out.println(idVaga);
+        }
+
+        pst.close();
+        rs.close();
+        conexao.close();
+
+        return idVaga;
+    }
+/*
     public Vaga pesquisarVaga(int id) throws SQLException, ClassNotFoundException {
         String sql = "select * from vaga where id=?";
         PreparedStatement pst;
@@ -115,5 +131,5 @@ public class VagaDAO {
         pst.execute();
         pst.close();
         conexao.close();
-    }
+    }*/
 }

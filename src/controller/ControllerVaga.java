@@ -7,7 +7,7 @@ import model.Vaga;
 
 public class ControllerVaga {
     public ControllerVaga() {}
-
+/*
     private VagaDAO vagaDao = new VagaDAO();
 
     public void cadastraVaga(String nome, String area, String descricao, int id, double salario) throws ClassNotFoundException, SQLException {
@@ -42,5 +42,5 @@ public class ControllerVaga {
 
     public void deletarVaga(Vaga vaga) throws ClassNotFoundException, SQLException {
         vagaDao.deletarVaga(vaga);
-    }
+    }*/
 }

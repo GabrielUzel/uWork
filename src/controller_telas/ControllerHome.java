@@ -1,10 +1,15 @@
 package controller_telas;
 
+import java.io.IOException;
+
+import controller.ChamaOutraTela;
+import controller.ClassAlerta;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class ControllerHome {
+    ClassAlerta alerta = new ClassAlerta();
 
     @FXML
     private Button adicionaVagas;
@@ -28,8 +33,24 @@ public class ControllerHome {
     private Button descandidatarVagas;
 
     @FXML
-    void btAdicionaVagas(ActionEvent event) {
+    void btCandidataVagas(ActionEvent event) {
+        
+    }
 
+    @FXML
+    void btDescandidataVagas(ActionEvent event) {
+        
+    }
+
+    @FXML
+    void btAdicionaVagas(ActionEvent event) {
+        try {
+            ChamaOutraTela cot = new ChamaOutraTela();
+            cot.chamar("/view/CadastroVaga.fxml", "Cadastro vagas");
+        } catch(IOException e) {
+            e.printStackTrace();
+            alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
+        }
     }
 
     @FXML
