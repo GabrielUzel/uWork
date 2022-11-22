@@ -24,13 +24,12 @@
             </Label>
             <Pane layoutX="38.0" layoutY="107.0" prefHeight="383.0" prefWidth="264.0">
                <children>
-                  <Label fx:id="tfNomeEmpresa" layoutX="89.0" prefHeight="17.0" prefWidth="87.0" text="Nome Empresa:" />
-                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="22.0" prefHeight="17.0" prefWidth="46.0" text="Vaga:" />
-                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="48.0" prefHeight="17.0" prefWidth="46.0" text="Área:" />
-                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="100.0" prefHeight="17.0" prefWidth="46.0" text="Regime:" />
-                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="74.0" prefHeight="17.0" prefWidth="46.0" text="Salário:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="28.0" prefHeight="17.0" prefWidth="46.0" text="Vaga:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="54.0" prefHeight="17.0" prefWidth="46.0" text="Área:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="106.0" prefHeight="17.0" prefWidth="46.0" text="Regime:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="80.0" prefHeight="17.0" prefWidth="46.0" text="Salário:" />
                   <Label alignment="CENTER_RIGHT" layoutX="5.0" layoutY="131.0" prefHeight="17.0" prefWidth="55.0" text="Descrição:" />
-                  <TextArea fx:id="taDescricao" editable="false" layoutX="1.0" layoutY="148.0" prefHeight="183.0" prefWidth="264.0" style="-fx-background-radius: 15; -fx-border-radius: 15;" wrapText="true" />
+                  <TextArea fx:id="taDescricao" editable="false" layoutX="1.0" layoutY="148.0" prefHeight="183.0" prefWidth="264.0" wrapText="true" />
                   <Label alignment="CENTER" layoutX="14.0" layoutY="337.0" prefHeight="39.0" prefWidth="113.0" style="-fx-background-color: #2A6F97; -fx-text-fill: white; -fx-background-radius: 50;" text="Candidatar">
                      <font>
                         <Font size="18.0" />
@@ -51,10 +50,12 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <TextField fx:id="tfNomeVaga" editable="false" layoutX="67.0" layoutY="18.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
-                  <TextField fx:id="tfArea" editable="false" layoutX="67.0" layoutY="44.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
-                  <TextField fx:id="tfSalario" editable="false" layoutX="67.0" layoutY="70.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
-                  <TextField fx:id="tfRegime" editable="false" layoutX="67.0" layoutY="96.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
+                  <TextField fx:id="tfNomeVaga" editable="false" layoutX="67.0" layoutY="24.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
+                  <TextField fx:id="tfArea" editable="false" layoutX="67.0" layoutY="50.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
+                  <TextField fx:id="tfSalario" editable="false" layoutX="67.0" layoutY="76.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
+                  <TextField fx:id="tfRegime" editable="false" layoutX="67.0" layoutY="102.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" />
+                  <TextField fx:id="tfNomeEmpresa" editable="false" layoutX="67.0" layoutY="-2.0" prefHeight="25.0" prefWidth="177.0" style="-fx-background-radius: 50;" visible="false" />
+                  <Label alignment="CENTER_RIGHT" layoutX="1.0" layoutY="2.0" prefHeight="17.0" prefWidth="55.0" text="Empresa:" visible="false" />
                </children>
             </Pane>
          </children>

@@ -10,7 +10,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import connection.ConectaBanco;
-import controller_telas.ControllerEscolherUsuario;
 import model.Vaga;
 
 public class VagaDAO {

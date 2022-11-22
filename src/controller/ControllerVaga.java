@@ -1,10 +1,5 @@
 package controller;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-import DAO.VagaDAO;
-import model.Vaga;
-
 public class ControllerVaga {
     public ControllerVaga() {}
 /*

@@ -1,7 +1,6 @@
 package controller;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import DAO.PessoaJuridicaDAO;
 import model.PessoaJuridica;
 
@@ -12,11 +11,11 @@ public class ControllerPessoaJuridica {
     
     public void cadastrarPessoaJuridica(String cnpj, String razaoSocial) throws ClassNotFoundException, SQLException {
         PessoaJuridica pessoaJuridica = new PessoaJuridica();
-        pessoaJuridica.setCNPJ(cnpj);
+        pessoaJuridica.setCNPJ(Long.parseLong(cnpj));
         pessoaJuridica.setRazaoSocial(razaoSocial);
         pessoaJuridicaDao.criarPessoaJuridica(pessoaJuridica);
     }
-
+/*
     public ArrayList<PessoaJuridica> listarTodasPessoasJuridicas() throws ClassNotFoundException, SQLException{ 
         ArrayList<PessoaJuridica> pessoasJuridicasList = (ArrayList<PessoaJuridica>) pessoaJuridicaDao.listarTodasPessoasJuridicas();
         return pessoasJuridicasList;
@@ -36,5 +35,5 @@ public class ControllerPessoaJuridica {
 
     public void deletarPessoaJuridica(PessoaJuridica pessoaJuridica) throws ClassNotFoundException, SQLException {
         pessoaJuridicaDao.deletarPessoaJuridica(pessoaJuridica);
-    }
+    }*/
 }

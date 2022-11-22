@@ -32,6 +32,9 @@ public class Usuario {
         this.numero = numero;
     }
 
+    public Usuario() {
+    }
+
     // Setters
     public void setNome(String nome) { this.nome = nome; }
     public void setEmail(String Email) { this.Email = Email; }
