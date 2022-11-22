@@ -132,6 +132,39 @@ public class VagaDAO {
         return vagasList;
     }
 
+    public List<Vaga> listarTodasVagasUsuario(String usuario) throws ClassNotFoundException, SQLException {
+        String sql = "select * from uwork.vaga where v_fk_Usuario_email = '"+usuario+"';";
+        PreparedStatement pst;
+        List<Vaga> vagasList = null;
+        ResultSet rs;
+        Vaga vaga = null;
+        Connection conexao = new ConectaBanco().conectar();
+
+        pst = conexao.prepareStatement(sql);
+        rs = pst.executeQuery();
+
+        if(rs != null) {
+            vagasList = new ArrayList<Vaga>();
+
+            while(rs.next()){
+                vaga = new Vaga();
+                vaga.setIdVaga(rs.getInt("v_id"));
+                vaga.setNomeVaga(rs.getString("v_nome"));
+                vaga.setArea(rs.getString("v_area_atuacao"));
+                vaga.setRegime(rs.getString("v_regime"));
+                //vaga.setDescricao(rs.getString("v_descricao"));
+                //vaga.setSalario(rs.getDouble("v_salario"));
+                vagasList.add(vaga);
+            }
+        }
+
+        rs.close();
+        pst.close();
+        conexao.close();
+
+        return vagasList;
+    }
+
     /*public void atualizarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
          String sql="update  vaga set () values(?,?,?,?)";
         PreparedStatement pst;

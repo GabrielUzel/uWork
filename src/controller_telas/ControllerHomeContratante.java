@@ -25,7 +25,7 @@ public class ControllerHomeContratante {
     void btListaVagas(ActionEvent event) {
         try {
             ChamaOutraTela cot = new ChamaOutraTela();
-            cot.chamar("/view/CadastroVaga.fxml", "Cadastro vagas");
+            cot.chamar("/view/ListarVagasPJ.fxml", "Listar Vagas");
         } catch(IOException e) {
             e.printStackTrace();
             alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
