@@ -72,9 +72,9 @@ public class VagaDAO {
 
         return idVaga;
     }
-/*
-    public Vaga pesquisarVaga(int id) throws SQLException, ClassNotFoundException {
-        String sql = "select * from vaga where id=?";
+
+    public Vaga pesquisarVaga(String id) throws SQLException, ClassNotFoundException {
+        String sql = "select * from vaga where nome=?";
         PreparedStatement pst;
         ResultSet rs;
         Vaga vaga = null;
@@ -97,7 +97,7 @@ public class VagaDAO {
         conexao.close();
 
         return vaga;
-    }*/
+    }
 
     public List<Vaga> listarTodasVagas() throws SQLException, ClassNotFoundException {
         String sql = "select * from uwork.vaga";

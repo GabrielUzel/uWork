@@ -2,7 +2,7 @@ package controller;
 
 public class ControllerVaga {
     public ControllerVaga() {}
-/*
+
     private VagaDAO vagaDao = new VagaDAO();
 
     public void cadastraVaga(String nome, String area, String descricao, int id, double salario) throws ClassNotFoundException, SQLException {
@@ -20,7 +20,7 @@ public class ControllerVaga {
         return vagasList;
     }
 
-    public Vaga pesquisarVaga(int id) throws ClassNotFoundException, SQLException {
+    public Vaga pesquisarVaga(String id) throws ClassNotFoundException, SQLException {
         Vaga vaga = vagaDao.pesquisarVaga(id);
         return vaga;
     }
@@ -37,5 +37,5 @@ public class ControllerVaga {
 
     public void deletarVaga(Vaga vaga) throws ClassNotFoundException, SQLException {
         vagaDao.deletarVaga(vaga);
-    }*/
+    }
 }
