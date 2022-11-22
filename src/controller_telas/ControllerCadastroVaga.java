@@ -9,7 +9,6 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
@@ -93,24 +92,16 @@ public class ControllerCadastroVaga implements Initializable{
         vaga.setIdVaga(idVaga);
         System.out.println("1- "+vaga.getIdVaga());
         System.out.println("2- "+idVaga);
-        /*
-        try {
-            controllerVaga.cadastraVaga(txt_nomeVaga.getText(), txt_area.getText(), txt_descricao.getText(), 0, 0.0);
-            alerta.informacao("Atenção", " Vaga cadastrada com sucesso", "uWork bom de mais");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            alerta.erro("erro", e.getMessage(), "um erro aconteceu");
-        } catch (SQLException e) {
-            alerta.erro("erro", e.getMessage(), "um erro aconteceu");
-            e.printStackTrace();
+        
+        if(idVaga!=-1){
+            try {
+                ChamaOutraTela eu = new ChamaOutraTela();
+                eu.chamar("/view/CadastroRequisitosVaga.fxml", "Cadastro requisitos");
+            } catch(IOException e) {
+                e.printStackTrace();
+                alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
+            }
         }
-
-        try {
-            chama.chamar("/view/BaseTela.fxml","Requisitos");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
     }
     
     @FXML

@@ -34,7 +34,12 @@ public class ControllerHome {
 
     @FXML
     void btCandidataVagas(ActionEvent event) {
-        
+        try {
+            ChamaOutraTela cot = new ChamaOutraTela();
+            cot.chamar("/view/ListarVagasCandidato.fxml", "Candidatar vagas");
+        } catch(IOException e) {
+            alerta.erro("Erro", "aconteceu um erro",e.getMessage());
+        }
     }
 
     @FXML

@@ -76,7 +76,6 @@ public class ControllerResquisitosController {
             alertas.erro("Erro","Não foi possivel chamar a tela base","provavel erro no caminha da pasta"+e.getMessage());
             e.printStackTrace();
         }
-
     }
 
 }

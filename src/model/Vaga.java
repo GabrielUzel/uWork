@@ -28,6 +28,9 @@ public class Vaga {
         this.email= gmail;
     }
 
+    public Vaga() {
+    }
+
     //getters
     public int getIdVaga() {
         return idVaga;
