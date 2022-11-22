@@ -76,6 +76,7 @@ public class ControllerCadastroUsuarios {
         ClassAlerta alerta = new ClassAlerta();
         try {
             ud.criarUsuario(u);
+            alerta.confirmacao("erro", e.getMessage(), "um erro aconteceu");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             alerta.erro("erro", e.getMessage(), "um erro aconteceu");
