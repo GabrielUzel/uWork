@@ -39,6 +39,13 @@ public class ControllerHomeContratante {
 
     @FXML
     void btRemoveVaga(ActionEvent event) {
+         try {
+            ChamaOutraTela cot = new ChamaOutraTela();
+            cot.chamar("/view/ExcluirVaga.fxml", "Listar Vagas");
+        } catch(IOException e) {
+            e.printStackTrace();
+            alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
+        }
 
     }
 
