@@ -13,7 +13,7 @@ public class ExperienciaDAO {
     public ExperienciaDAO() {}
 
     public void criarExperiencia(Experiencia experiencia) throws SQLException, ClassNotFoundException {
-        String sql="insert into experiencia () values(?,?,?,?,?)";
+        String sql = "insert into experiencia () values(?,?,?,?,?)";
         
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
@@ -88,7 +88,7 @@ public class ExperienciaDAO {
     }
 
     public void atualizarExperiencia(Experiencia experiencia) throws SQLException, ClassNotFoundException {
-       String sql="update  experiencia set () values(?,?,?,?,?)";
+       String sql = "update  experiencia set () values(?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
         

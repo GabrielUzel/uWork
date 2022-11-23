@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JOptionPane;
-
 import connection.ConectaBanco;
 import model.Vaga;
 
@@ -133,7 +130,7 @@ public class VagaDAO {
     }
 
     public List<Vaga> listarTodasVagasUsuario(String usuario) throws ClassNotFoundException, SQLException {
-        String sql = "select * from uwork.vaga where v_fk_Usuario_email = '"+usuario+"';";
+        String sql = "select * from uwork.vaga where v_fk_Usuario_email = '" + usuario + "';";
         PreparedStatement pst;
         List<Vaga> vagasList = null;
         ResultSet rs;
@@ -166,7 +163,7 @@ public class VagaDAO {
     }
 
     public void atualizarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
-         String sql="update  vaga set () values(?,?,?,?)";
+        String sql = "update  vaga set () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
         

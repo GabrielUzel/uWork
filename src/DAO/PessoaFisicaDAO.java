@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import connection.ConectaBanco;
 import java.util.ArrayList;
 import java.util.List;
-
 import model.CacheUsuario;
 import model.PessoaFisica;
 
