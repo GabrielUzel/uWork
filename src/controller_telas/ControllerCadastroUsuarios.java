@@ -59,17 +59,26 @@ public class ControllerCadastroUsuarios {
         String nome = tfNome.getText();
         String Email = tfEmail.getText();
         String senha = tfSenha.getText();
-        String telefone = tfTelefone.getText();
+        Long telefone = (long) 0;
+        if(!tfTelefone.getText().isEmpty()){
+            telefone = Long.parseLong(tfTelefone.getText());
+        }        
         String pais = tfPais.getText();
         String estado = tfEstado.getText();
-        String cep = tfCep.getText();
+        Long cep = (long) 0;
+        if(!tfCep.getText().isEmpty()){
+            cep = Long.parseLong(tfCep.getText());
+        }   
         String cidade = tfCidade.getText();
         String bairro = tfBairro.getText();
         String logradouro = tfLogradouro.getText();
         String complemento = tfComplemento.getText();
-        String numero = tfNumero.getText();
+        int numero = 0;
+        if(!tfNumero.getText().isEmpty()){
+            numero = Integer.parseInt(tfNumero.getText());
+        }
 
-        Usuario u = new Usuario(nome, Email, senha, Long.parseLong(telefone), pais, estado, Long.parseLong(cep), cidade, bairro, logradouro, complemento, Integer.parseInt(numero));
+        Usuario u = new Usuario(nome, Email, senha, telefone, pais, estado, cep, cidade, bairro, logradouro, complemento, numero);
         
         UsuarioDAO ud = new UsuarioDAO();
 
