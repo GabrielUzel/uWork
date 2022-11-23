@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import connection.ConectaBanco;
 import model.Usuario;
 
@@ -39,52 +42,60 @@ public class UsuarioDAO {
         String sql = "select * from uwork.usuario where u_email=?";
         PreparedStatement pst;
         ResultSet rs;
-        Usuario canditado = null;
+        Usuario usuario = null;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
 
         if(rs != null ){
-            canditado = new Usuario();
-            canditado.setEmail(rs.getString("u_email"));
-            canditado.setNome(rs.getString("u_nome"));
-            //canditado.setSobrenome(rs.getString("sobrenome"));
-            canditado.setEmail(rs.getString("u_email"));
-            //canditado.setTelefone(rs.getString("u_telefone"));
-            //canditado.setDataNascimento(rs.getDate("data nascimento"));
+            usuario = new Usuario();
+            usuario.setNome(rs.getString("u_nome"));
+            usuario.setEmail(rs.getString("u_email"));
+            usuario.setBairro(rs.getString("u_logradouro"));
+            usuario.setComplemento(rs.getString("u_complemento"));
+            usuario.setNumero(rs.getInt("u_numero"));
+            usuario.setCidade(rs.getString("u_cidade"));
+            usuario.setPais(rs.getString("u_pais"));
+            usuario.setCep(rs.getInt("u_cep"));
+            usuario.setTelefone(rs.getInt("u_telefone"));
+            usuario.setEstado(rs.getString("u_estado"));
         }
 
         rs.close();
         pst.close();
         conexao.close();
 
-        return canditado;
+        return usuario;
     }
 
-    /*
-    public List<Canditado> listarTodosCandidatos() throws SQLException, ClassNotFoundException {
-        String sql = "select * from candidato";
+    
+    public List<Usuario> listarTodosUsuario() throws SQLException, ClassNotFoundException {
+        String sql = "select * from Usuario";
+        Usuario usuario = new Usuario();
         PreparedStatement pst;
-        List <Canditado> canditadosList = null;
+        List <Usuario> canditadosList = null;
         ResultSet rs;
-        Canditado canditado = null;
+        Usuario canditado = null;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         rs = pst.executeQuery();
 
         if(rs != null) {
-            canditadosList = new ArrayList<Canditado>();
+            canditadosList = new ArrayList<Usuario>();
 
             while(rs.next()) {
-                canditado = new Canditado();
-                canditado.setIdCanditado(rs.getInt("id"));
-                canditado.setNome(rs.getString("nome"));
-                canditado.setSobrenome(rs.getString("sobrenome"));
-                canditado.setEmail(rs.getString("email"));
-                canditado.setTelefone(rs.getString("telefone"));
-                canditado.setDataNascimento(rs.getDate("data nascimento"));
+                usuario.setNome(rs.getString("u_nome"));
+                usuario.setEmail(rs.getString("u_email"));
+                usuario.setBairro(rs.getString("u_logradouro"));
+                usuario.setComplemento(rs.getString("u_complemento"));
+                usuario.setNumero(rs.getInt("u_numero"));
+                usuario.setCidade(rs.getString("u_cidade"));
+                usuario.setPais(rs.getString("u_pais"));
+                usuario.setCep(rs.getInt("u_cep"));
+                usuario.setTelefone(rs.getInt("u_telefone"));
+                usuario.setEstado(rs.getString("u_estado"));
                 canditadosList.add(canditado);
             }
         }
@@ -96,35 +107,40 @@ public class UsuarioDAO {
         return canditadosList;
     }
 
-    public void atualizarCandidato(Canditado candidato) throws SQLException, ClassNotFoundException {
+    public void atualizarCandidato(Usuario usuario) throws SQLException, ClassNotFoundException {
         String sql="update  canditado set () values(?,?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setInt(1, candidato.getIdCanditado());
-        pst.setString(2, candidato.getNome());
-        pst.setString(3, candidato.getCPF());
-        pst.setString(4, candidato.getSobrenome());
-        pst.setString(5, candidato.getEmail());
-        pst.setString(6, candidato.getTelefone());
-        //pst.setDate(6, (Date) can.getDataNascimento());
+        pst.setString(1, usuario.getEmail());
+        pst.setString(2, usuario.getSenha());
+        pst.setString(3, usuario.getNome());
+        pst.setString(4, usuario.getLogradouro());
+        pst.setInt(5, usuario.getNumero());
+        pst.setString(6, usuario.getBairro());
+        pst.setString(7, usuario.getComplemento());
+        pst.setString(8, usuario.getCidade());
+        pst.setString(9, usuario.getEstado());
+        pst.setString(10, usuario.getPais());
+        pst.setLong(11, usuario.getCep());
+        pst.setLong(12, usuario.getTelefone());
 
         pst.close();
         conexao.close();
     }
 
-    public void deletarCandidato(Canditado candidato) throws SQLException, ClassNotFoundException {
+    public void deletarCandidato(Usuario usuario) throws SQLException, ClassNotFoundException {
         String sql = "delete from candidato where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setInt(0, candidato.getIdCanditado());
+        pst.setInt(0, usuario.getNumero());
         pst.execute();
         pst.close();
         conexao.close();
     }
-    */
+    
 }
