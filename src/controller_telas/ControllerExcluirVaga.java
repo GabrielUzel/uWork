@@ -83,6 +83,8 @@ public class ControllerExcluirVaga{
         } catch (SQLException e) {
             alerta.erro("Erro", "Nao foi possivel encontrar a vaga "+vaga.getNomeVaga(), e.getMessage());
             e.printStackTrace();
+        } catch (Exception e){
+             alerta.erro("Erro", "Nao foi possivel encontrar a vaga "+vaga.getNomeVaga(), e.getMessage());
         }
        
 
