@@ -86,8 +86,8 @@ public class VagaDAO {
         if(rs != null) {
             vaga = new Vaga();
             vaga.setIdVaga(rs.getInt(id));
-            vaga.setNome(rs.getString("cargo"));
-            vaga.setAreaAtuacao(rs.getString("areaDeAtuacao"));
+            vaga.setNomeVaga(rs.getString("cargo"));
+            vaga.setArea(rs.getString("areaDeAtuacao"));
             vaga.setDescricao(rs.getString("empresa"));
             vaga.setSalario(rs.getDouble("tempoDeServico"));
         }
@@ -165,7 +165,7 @@ public class VagaDAO {
         return vagasList;
     }
 
-    /*public void atualizarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
+    public void atualizarVaga(Vaga vaga) throws SQLException, ClassNotFoundException {
          String sql="update  vaga set () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
@@ -173,11 +173,11 @@ public class VagaDAO {
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
         pst.setInt(1, vaga.getIdVaga());
-        pst.setString(2, vaga.getNome());
+        pst.setString(2, vaga.getNomeVaga());
         pst.setString(3, vaga.getDescricao());
-        pst.setString(4, vaga.getTipoRegime());
+        pst.setString(4, vaga.getRegime());
         pst.setDouble(5, vaga.getSalario());
-        pst.setString(6, vaga.getAreaAtuacao());
+        pst.setString(6, vaga.getArea());
         
         pst.close();
         conexao.close();
@@ -193,5 +193,5 @@ public class VagaDAO {
         pst.execute();
         pst.close();
         conexao.close();
-    }*/
+    }
 }

@@ -1,5 +1,9 @@
 package controller;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
+import DAO.VagaDAO;
+import model.*;
 public class ControllerVaga {
     public ControllerVaga() {}
 
@@ -7,8 +11,8 @@ public class ControllerVaga {
 
     public void cadastraVaga(String nome, String area, String descricao, int id, double salario) throws ClassNotFoundException, SQLException {
         Vaga vaga = new Vaga();
-        vaga.setAreaAtuacao(nome);
-        vaga.setTipoRegime(area);
+        vaga.setArea(nome);
+        vaga.setRegime(area);
         vaga.setDescricao(descricao);
         vaga.setIdVaga(id);
         vaga.setSalario(salario);
@@ -27,8 +31,8 @@ public class ControllerVaga {
 
     public void atualizarVaga(String nome, String area, String descricao, int id, double salario) throws ClassNotFoundException, SQLException {
         Vaga vaga = new Vaga();
-        vaga.setAreaAtuacao(nome);
-        vaga.setTipoRegime(area);
+        vaga.setArea(nome);
+        vaga.setRegime(area);
         vaga.setDescricao(descricao);
         vaga.setIdVaga(id);
         vaga.setSalario(salario);
