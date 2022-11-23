@@ -71,7 +71,7 @@ public class VagaDAO {
     }
 
     public Vaga pesquisarVaga(String id) throws SQLException, ClassNotFoundException {
-        String sql = "select * from vaga where nome=?";
+        String sql = "select * from vaga where  v_nome=?";
         PreparedStatement pst;
         ResultSet rs;
         Vaga vaga = null;
