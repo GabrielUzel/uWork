@@ -13,7 +13,7 @@ public class FormacaoDAO {
     public FormacaoDAO() {}
 
     public void criarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
-        String sql="insert into formacao () values(?,?,?,?)";
+        String sql = "insert into formacao () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
@@ -84,7 +84,7 @@ public class FormacaoDAO {
     }
 
     public void atualizarFormacao(Formacao formacao) throws SQLException, ClassNotFoundException {
-        String sql="update  formacao set () values(?,?,?,?)";
+        String sql = "update  formacao set () values(?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 

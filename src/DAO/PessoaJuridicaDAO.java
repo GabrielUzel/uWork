@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import connection.ConectaBanco;
-
 import model.CacheUsuario;
 import model.PessoaJuridica;
 
@@ -13,7 +12,6 @@ public class PessoaJuridicaDAO {
     CacheUsuario cacheUsuario = new CacheUsuario();
 
     public PessoaJuridicaDAO(){}
-
 
     public void criarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
         String sql = "INSERT INTO uwork.pj VALUES(?,?,?)";
@@ -53,7 +51,7 @@ public class PessoaJuridicaDAO {
 
         return canditado;
     }
-/*
+    /*
     public List<PessoaJuridica> listarTodasPessoasJuridicas() throws SQLException, ClassNotFoundException {
         String sql = "select * from pessoaJuridica";
         PreparedStatement pst;

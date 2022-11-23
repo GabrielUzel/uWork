@@ -84,7 +84,7 @@ public class EmpregadorDAO {
     }
 
     public void atualizarEmpregador(Empregador empregador) throws SQLException, ClassNotFoundException {
-        String sql="update  contratante set () values(?,?,?,?,?)";
+        String sql = "update  contratante set () values(?,?,?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
         pst = conexao.prepareStatement(sql);
