@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
 public class ControllerExcluirVaga{
     private ControllerVaga controllerVaga = new ControllerVaga();
     private ClassAlerta alerta = new ClassAlerta();
-    private Vaga vaga;
+    private Vaga vaga = new Vaga();
     public ControllerExcluirVaga(){}
      @FXML
     private Button btn_cancelar;
