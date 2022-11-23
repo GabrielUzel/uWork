@@ -75,7 +75,13 @@ public class ControllerHome {
 
     @FXML
     void btRemoveVagas(ActionEvent event) {
-
+        try {
+            ChamaOutraTela eu = new ChamaOutraTela();
+            eu.chamar("/view/ExcluirVaga.fxml", "Excluir Vaga");
+        } catch(IOException e) {
+            e.printStackTrace();
+            alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
+        }
     }
 
     @FXML
