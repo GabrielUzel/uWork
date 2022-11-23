@@ -32,8 +32,8 @@ public class Usuario {
         this.numero = numero;
     }
 
-    public Usuario() {
-    }
+    // Construtor
+    public Usuario() {}
 
     // Setters
     public void setNome(String nome) { this.nome = nome; }
