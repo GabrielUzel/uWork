@@ -1,4 +1,4 @@
-
+package controller;
 public class RecID {
     private static String nome;
     private static String Email;
@@ -14,31 +14,31 @@ public class RecID {
     private static int numero;
      
     // Setters
-    static void setNome(String nome) { this.nome = nome; }
-    static void setEmail(String Email) { this.Email = Email; }
-    static void setSenha(String senha) { this.senha = senha; }
-    static void setTelefone(long telefone) { this.telefone = telefone; }
-    static void setPais(String pais) { this.pais = pais; }
-    static void setEstado(String estado) { this.estado = estado; }
-    static void setCep(long cep) { this.cep = cep; }
-    static void setCidade(String cidade) { this.cidade = cidade; }
-    static void setBairro(String bairro) { this.bairro = bairro; }
-    static void setLogradouro(String logradouro) { this.logradouro = logradouro; }
-    static void setComplemento(String complemento) { this.complemento = complemento; }
-    static void setNumero(int numero) { this.numero = numero; }
+    public static void setNome(String nome1) { nome = nome1; }
+    public static void setEmail(String Email1) { Email = Email1; }
+    public static void setSenha(String senha1) { senha = senha1; }
+    public static void setTelefone(long telefone1) { telefone = telefone1; }
+    public static void setPais(String pais1) { pais = pais1; }
+    public static void setEstado(String estado1) { estado = estado1; }
+    public static void setCep(long cep1) { cep = cep1; }
+    public static void setCidade(String cidade1) { cidade = cidade1; }
+    public static void setBairro(String bairro1) { bairro = bairro1; }
+    public static void setLogradouro(String logradouro1) {logradouro = logradouro1; }
+    public static void setComplemento(String complemento1) { complemento = complemento1; }
+    public static void setNumero(int numero1) { numero = numero1; }
 
     // Getters
-    static String getNome() { return nome; }
-    static String getEmail() { return Email; }
-    static String getSenha() { return senha; }
-    static long getTelefone() { return telefone; }
-    static String getPais() { return pais; }
-    static String getEstado() { return estado; }
-    static long getCep() { return cep; }
-    static String getCidade() { return cidade; }
-    static String getBairro() { return bairro; }
-    static String getLogradouro() { return logradouro; }
-    static String getComplemento() { return complemento; }
-    static int getNumero() { return numero; }
+    public static String getNome() { return nome; }
+    public static String getEmail() { return Email; }
+    public static String getSenha() { return senha; }
+    public static long getTelefone() { return telefone; }
+    public static String getPais() { return pais; }
+    public static String getEstado() { return estado; }
+    public static long getCep() { return cep; }
+    public static String getCidade() { return cidade; }
+    public static String getBairro() { return bairro; }
+    public static String getLogradouro() { return logradouro; }
+    public static String getComplemento() { return complemento; }
+    public static int getNumero() { return numero; }
     
 }
