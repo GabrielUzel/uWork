@@ -86,12 +86,13 @@ public class ControllerCadastroVaga implements Initializable{
         VagaDAO vagaDAO = new VagaDAO();
         try {
             idVaga = vagaDAO.criarVaga(vaga);
+            alerta.confirmacao("Sucesso", "Vaga de emprego cadastrada com sucesso", null);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
         vaga.setIdVaga(idVaga);
-        System.out.println("1- "+vaga.getIdVaga());
-        System.out.println("2- "+idVaga);
+        //System.out.println("1- "+vaga.getIdVaga());
+        //System.out.println("2- "+idVaga);
         
         if(idVaga!=-1){
             try {
