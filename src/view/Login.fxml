@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller_telas.ControllerLogin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller_telas.ControllerLogin">
    <children>
       <Pane layoutX="-4.0" prefHeight="521.0" prefWidth="327.0" style="-fx-background-color: A9D6E5;">
          <children>
@@ -38,7 +38,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="btn_entrar" layoutX="44.0" layoutY="326.0" mnemonicParsing="false" onAction="#btn_entrarFUN" opacity="0.1" prefHeight="39.0" prefWidth="113.0" style="-fx-background-radius: 50; -fx-background-color: 2A6F97;">
+            <Button fx:id="btn_entrar" layoutX="44.0" layoutY="326.0" mnemonicParsing="false" onAction="#btn_entrarFUN" opacity="0.1" prefHeight="39.0" prefWidth="113.0" style="-fx-background-radius: 50;">
                <font>
                   <Font size="18.0" />
                </font>
@@ -48,7 +48,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="txt_cadastrar" layoutX="179.0" layoutY="326.0" mnemonicParsing="false" onAction="#btn_cadastrarFUN" opacity="0.1" prefHeight="39.0" prefWidth="113.0" style="-fx-background-radius: 50; -fx-background-color: 2A6F97;">
+            <Button fx:id="txt_cadastrar" layoutX="179.0" layoutY="326.0" mnemonicParsing="false" onAction="#btn_cadastrarFUN" opacity="0.1" prefHeight="39.0" prefWidth="113.0" style="-fx-background-radius: 50;">
                <font>
                   <Font size="18.0" />
                </font>
