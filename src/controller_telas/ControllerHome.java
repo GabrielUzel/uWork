@@ -70,6 +70,13 @@ public class ControllerHome {
 
     @FXML
     void btPerfil(ActionEvent event) {
+         try {
+            ChamaOutraTela cot = new ChamaOutraTela();
+            cot.chamar("/view/PerfilUsuario.fxml", "Perfil do Usuario");
+        } catch(IOException e) {
+            e.printStackTrace();
+            alerta.erro("Erro", e.getMessage(), "aconteceu um erro");
+        }
 
     }
 
