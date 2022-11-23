@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import connection.ConectaBanco;
 import controller.RecID;
+import javafx.scene.control.PasswordField;
 import controller.ChamaOutraTela;
 import controller.ClassAlerta;
 import javafx.scene.control.Button;
@@ -34,7 +35,7 @@ public class ControllerLogin {
     private Button txt_recsenha;
 
     @FXML
-    private TextField txt_senha;
+    private PasswordField txt_senha;
     
     @FXML
     void btn_cadastrarFUN(ActionEvent event) {
