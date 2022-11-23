@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import connection.ConectaBanco;
 import model.CacheUsuario;
 import model.PessoaJuridica;
@@ -51,9 +54,9 @@ public class PessoaJuridicaDAO {
 
         return canditado;
     }
-    /*
+    
     public List<PessoaJuridica> listarTodasPessoasJuridicas() throws SQLException, ClassNotFoundException {
-        String sql = "select * from pessoaJuridica";
+        String sql = "select * from uwork.pj";
         PreparedStatement pst;
         List <PessoaJuridica> pessoasJuridicasList = null;
         ResultSet rs;
@@ -68,7 +71,7 @@ public class PessoaJuridicaDAO {
 
             while(rs.next()) {
                 pessoaJuridica = new PessoaJuridica();
-                pessoaJuridica.setCNPJ(rs.getString("CNPJ"));
+                pessoaJuridica.setCNPJ(Long.parseLong(rs.getString("CNPJ")));
                 pessoaJuridica.setRazaoSocial(rs.getString("RazaoSocial"));
                 pessoasJuridicasList.add(pessoaJuridica);
             }
@@ -83,28 +86,28 @@ public class PessoaJuridicaDAO {
 
     
     public void atualizarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
-        String sql = "update  pessoajuridica set () values(?,?,?)";
+        String sql = "update uwork.pj set () values(?,?,?)";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
         pst.executeQuery();
-        pst.setString(1, pessoaJuridica.getCNPJ());
+        pst.setLong(1, pessoaJuridica.getCNPJ());
         pst.setString(2, pessoaJuridica.getRazaoSocial());
-
+        pst.setString(3, cacheUsuario.getUsuario());
         pst.close();
         conexao.close();
     }
 
     public void deletarPessoaJuridica(PessoaJuridica pessoaJuridica) throws SQLException, ClassNotFoundException {
-        String sql = "delete from pessoafisica where id=?";
+        String sql = "delete from uwork.pj where id=?";
         PreparedStatement pst;
         Connection conexao = new ConectaBanco().conectar();
 
         pst = conexao.prepareStatement(sql);
-        pst.setString(1, pessoaJuridica.getCNPJ());
+        pst.setString(1,String.valueOf(pessoaJuridica.getCNPJ()));
         pst.execute();
         pst.close();
         conexao.close();
-    }*/
+    }
 }
