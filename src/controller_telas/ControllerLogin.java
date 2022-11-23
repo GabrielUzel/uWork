@@ -7,9 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
-
 import connection.ConectaBanco;
 import controller.ChamaOutraTela;
 import controller.ClassAlerta;
@@ -54,33 +52,33 @@ public class ControllerLogin {
         ResultSet rs;
         boolean check = false;
         String id = null;
+
         try {
-            String sql = "Select * from uwork.usuario where u_email = '"+ txt_email.getText()+"' AND u_senha='"+txt_senha.getText()+"';";
+            String sql = "Select * from uwork.usuario where u_email = '" + txt_email.getText() + "' AND u_senha='" + txt_senha.getText() + "';";
             conexao = new ConectaBanco().conectar();
             stmt = conexao.prepareStatement(sql);
 
             rs = stmt.executeQuery();
             
             while(rs.next()){
-                check=true;
+                check = true;
                 System.out.println(rs.getString("u_email"));
-                id=rs.getString("u_email");
+                id = rs.getString("u_email");
                 cacheUsuario.setUsuario(id);
             }
             
             rs.close();
             stmt.close();
             conexao.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
         
-        if(!check){
+        if(!check) {
             JOptionPane.showMessageDialog(null, "Usuário ou senha incorretos!");
-        }else{
+        } else {
             try {
                 ControllerEscolherUsuario eu = new ControllerEscolherUsuario();
                 eu.chamar("/view/EscolherUsuario.fxml", "Escolher Usuário", id);
