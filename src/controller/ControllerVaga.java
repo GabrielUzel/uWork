@@ -1,15 +1,16 @@
 package controller;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 import DAO.VagaDAO;
 import model.*;
+
 public class ControllerVaga {
     public ControllerVaga() {}
 
     private VagaDAO vagaDao = new VagaDAO();
 
-    public void cadastraVaga(String nome, String area, String descricao, int id, double salario,String email) throws ClassNotFoundException, SQLException {
+    public void cadastraVaga(String nome, String area, String descricao, int id, double salario, String email) throws ClassNotFoundException, SQLException {
         Vaga vaga = new Vaga();
         vaga.setArea(nome);
         vaga.setRegime(area);

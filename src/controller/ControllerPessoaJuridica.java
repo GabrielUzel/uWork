@@ -15,7 +15,7 @@ public class ControllerPessoaJuridica {
         pessoaJuridica.setRazaoSocial(razaoSocial);
         pessoaJuridicaDao.criarPessoaJuridica(pessoaJuridica);
     }
-/*
+    /*
     public ArrayList<PessoaJuridica> listarTodasPessoasJuridicas() throws ClassNotFoundException, SQLException{ 
         ArrayList<PessoaJuridica> pessoasJuridicasList = (ArrayList<PessoaJuridica>) pessoaJuridicaDao.listarTodasPessoasJuridicas();
         return pessoasJuridicasList;
