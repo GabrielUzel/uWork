@@ -1,7 +1,6 @@
 package controller_telas;
 
 import java.sql.SQLException;
-
 import DAO.PessoaFisicaDAO;
 import controller.ClassAlerta;
 import javafx.event.ActionEvent;
@@ -30,10 +29,8 @@ public class ControllerCadastroUsuariosFisica {
             pessoaFisicaDao.criarPessoaFisica(pessoaFisica);
             classAlerta.confirmacao("Sucesso", "Sucesso ao cadastrar pessoa fisica", null);
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
