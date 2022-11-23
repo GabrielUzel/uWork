@@ -39,7 +39,7 @@ public class VagaDAO {
         conexao.close();
         
         ////////////////////////////////////////////////////////
-        PreparedStatement stmt;
+        /*PreparedStatement stmt;
         Connection con;
         ResultSet rs;
         boolean check = false;
@@ -69,7 +69,7 @@ public class VagaDAO {
             JOptionPane.showMessageDialog(null, "Vaga não criada!");
         }
         ///////////////////////////////////////////////////////
-
+*/
         return idVaga;
     }
 

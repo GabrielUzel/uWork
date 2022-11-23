@@ -11,6 +11,7 @@ import java.util.List;
 
 import connection.ConectaBanco;
 import model.Canditado;
+import model.Vaga;
 
 public class CandidaturaDAO {
     public CandidaturaDAO() {}
@@ -92,6 +93,39 @@ public class CandidaturaDAO {
         conexao.close();
 
         return canditadosList;
+    }
+
+    public List<Vaga> listaruCandidaturasUsuario(String usuario) throws ClassNotFoundException, SQLException {
+        String sql = "select v_nome, v_area_atuacao, v_salario, v_regime from (uwork.candidatura join uwork.vaga ON vaga.v_id = candidatura.c_fk_vaga_id) WHERE c_fk_PF_FK_Usuario_email = '"+usuario+"';";
+        PreparedStatement pst;
+        List<Vaga> vagasList = null;
+        ResultSet rs;
+        Vaga vaga = null;
+        Connection conexao = new ConectaBanco().conectar();
+
+        pst = conexao.prepareStatement(sql);
+        rs = pst.executeQuery();
+
+        if(rs != null) {
+            vagasList = new ArrayList<Vaga>();
+
+            while(rs.next()){
+                vaga = new Vaga();
+                vaga.setSalario(rs.getDouble("v_salario"));
+                vaga.setNomeVaga(rs.getString("v_nome"));
+                vaga.setArea(rs.getString("v_area_atuacao"));
+                vaga.setRegime(rs.getString("v_regime"));
+                //vaga.setDescricao(rs.getString("v_descricao"));
+                //vaga.setSalario(rs.getDouble("v_salario"));
+                vagasList.add(vaga);
+            }
+        }
+
+        rs.close();
+        pst.close();
+        conexao.close();
+
+        return vagasList;
     }
 
     /*
