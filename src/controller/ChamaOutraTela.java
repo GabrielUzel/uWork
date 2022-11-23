@@ -14,6 +14,7 @@ public class ChamaOutraTela {
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(caminhoTela));
         Scene scene = new Scene(root);
+        
         stage.setTitle(titulo);
         stage.setScene(scene);
         stage.show();
