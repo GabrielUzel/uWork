@@ -1,7 +1,6 @@
 package controller_telas;
 
 import java.sql.SQLException;
-
 import DAO.PessoaJuridicaDAO;
 import controller.ClassAlerta;
 import javafx.event.ActionEvent;
@@ -28,6 +27,7 @@ public class ControllerCadastroUsuariosJuridica {
         pj.setCNPJ(Long.parseLong(tfCnpj.getText()));
         pj.setRazaoSocial(tfRazaoSicial.getText());
         PessoaJuridicaDAO pjd = new PessoaJuridicaDAO();
+        
         try {
             pjd.criarPessoaJuridica(pj);
             alerta.confirmacao("sucesso", "Usuário jurídico cadastrado com sucesso", null);

@@ -3,7 +3,6 @@ package controller_telas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -11,7 +10,6 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
-
 import DAO.VagaDAO;
 import controller.ChamaOutraTela;
 import controller.ClassAlerta;
@@ -78,7 +76,7 @@ public class ControllerCadastroVaga implements Initializable{
         int dataAtualDia = dataAtual.getDayOfMonth();
         int dataAtualMes = dataAtual.getMonthValue();
         int dataAtualAno = dataAtual.getYear();
-        String dataAtualString = ""+dataAtualDia+"-"+dataAtualMes+"-"+dataAtualAno+"";
+        String dataAtualString = "" + dataAtualDia + "-" + dataAtualMes + "-" + dataAtualAno + "";
         Date dta = Date.valueOf(dataAtual);
 
         Vaga vaga = new Vaga(nomeVaga,regime,salario,area,descricao,status,dta,dl,gmail);
