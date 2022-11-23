@@ -2,8 +2,13 @@ package controller_telas;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import controller.RecID;
 
 public class ControllerPerfilUsuario implements Initializable{
@@ -63,6 +68,15 @@ public class ControllerPerfilUsuario implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         tfNome.setText(RecID.getNome());
+        tfEmail.setText(RecID.getEmail());
+        tfBairro.setText(RecID.getBairro());
+        tfLogradouro.setText(RecID.getLogradouro());
+        tfEstado.setText(RecID.getEstado());
+        tfPais.setText(RecID.getPais());
+        tfCep.setText(String.valueOf(RecID.getCep()));
+        tfNumero.setText(String.valueOf(RecID.getNumero()));
+        tfTelefone.setText(String.valueOf(RecID.getTelefone()));
+        tfCidade.setText(String.valueOf(RecID.getCidade()));
 
     }
 
