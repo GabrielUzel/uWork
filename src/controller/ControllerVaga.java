@@ -9,13 +9,14 @@ public class ControllerVaga {
 
     private VagaDAO vagaDao = new VagaDAO();
 
-    public void cadastraVaga(String nome, String area, String descricao, int id, double salario) throws ClassNotFoundException, SQLException {
+    public void cadastraVaga(String nome, String area, String descricao, int id, double salario,String email) throws ClassNotFoundException, SQLException {
         Vaga vaga = new Vaga();
         vaga.setArea(nome);
         vaga.setRegime(area);
         vaga.setDescricao(descricao);
         vaga.setIdVaga(id);
         vaga.setSalario(salario);
+        vaga.setEmail(email);
         vagaDao.criarVaga(vaga);
     }
 
